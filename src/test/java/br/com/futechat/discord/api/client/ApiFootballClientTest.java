@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Map;
 
 import org.junit.Ignore;
@@ -17,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import br.com.futechat.discord.api.client.config.FeignConfig;
 import br.com.futechat.discord.api.model.ApiFootballLeagueResponse;
+import br.com.futechat.discord.api.model.ApiFootballPlayersResponse;
 import br.com.futechat.discord.api.model.ApiFootballResponse;
 import br.com.futechat.discord.api.model.ApiFootballSeason;
 import br.com.futechat.discord.api.model.ApiFootballTeamsResponse;
@@ -55,10 +55,18 @@ public class ApiFootballClientTest {
 	}
 
 	@Test
+	@Ignore
 	public void shouldFetchTeamsInformationFromApi() {
 		ApiFootballResponse<ApiFootballTeamsResponse> teams = apiFootballClient.teams(Map.of("name", "Arsenal"));
 		assertEquals(teams.get(), "teams");
 		assertEquals(teams.response().get(0).team().country(), "England");
+	}
+	
+	@Test
+	public void shouldFetchAdultoNey() {
+		ApiFootballResponse<ApiFootballPlayersResponse> players = apiFootballClient.players(Map.of("search", "Neymar", "team", "85"));
+		assertEquals(players.get(), "players");
+		assertEquals(players.response().get(0).player().lastname(), "da Silva Santos Júnior");
 	}
 
 }

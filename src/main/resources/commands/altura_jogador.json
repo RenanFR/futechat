@@ -1,0 +1,18 @@
+{
+    "name": "altura_jogador",
+    "description": "Te diz a altura do jogador em questão",
+    "options": [
+        {
+            "name": "nome",
+            "description": "Nome do jogador",
+            "type": 3,
+            "required": true
+        },
+        {
+            "name": "time",
+            "description": "Time onde joga",
+            "type": 3,
+            "required": true
+        }
+    ]
+}
