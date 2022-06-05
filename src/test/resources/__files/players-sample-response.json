@@ -1,245 +1,382 @@
 {
    "get":"players",
    "parameters":{
-      "search":"Neymar",
-      "team":"85"
+      "league":"39",
+      "season":"2021"
    },
    "errors":[
       
    ],
-   "results":1,
+   "results":20,
    "paging":{
       "current":1,
-      "total":1
+      "total":40
    },
    "response":[
       {
          "player":{
-            "id":276,
-            "name":"Neymar da Silva Santos J\u00fanior",
-            "firstname":"Neymar",
-            "lastname":"da Silva Santos J\u00fanior",
-            "age":30,
+            "id":301,
+            "name":"Benjamin Luke Woodburn",
+            "firstname":"Benjamin Luke",
+            "lastname":"Woodburn",
+            "age":23,
             "birth":{
-               "date":"1992-02-05",
-               "place":"Mogi das Cruzes",
-               "country":"Brazil"
+               "date":"1999-10-15",
+               "place":"Nottingham",
+               "country":"England"
             },
-            "nationality":"Brazil",
-            "height":"175 cm",
-            "weight":"68 kg",
+            "nationality":"Wales",
+            "height":"174 cm",
+            "weight":"72 kg",
             "injured":false,
-            "photo":"https:\/\/media.api-sports.io\/football\/players\/276.png"
+            "photo":"https://media.api-sports.io/football/players/301.png"
          },
          "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":40,
+                  "name":"Liverpool",
+                  "logo":"https://media.api-sports.io/football/teams/40.png"
                },
                "league":{
-                  "id":61,
-                  "name":"Ligue 1",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/61.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
                   "season":2021
                },
                "games":{
-                  "appearences":22,
-                  "lineups":22,
-                  "minutes":1861,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
                   "position":"Attacker",
-                  "rating":"7.481818",
+                  "rating":null,
                   "captain":false
                },
                "substitutes":{
                   "in":0,
-                  "out":10,
-                  "bench":0
+                  "out":0,
+                  "bench":1
                },
                "shots":{
-                  "total":44,
-                  "on":30
+                  "total":null,
+                  "on":null
                },
                "goals":{
-                  "total":13,
+                  "total":0,
                   "conceded":0,
-                  "assists":6,
+                  "assists":null,
                   "saves":null
                },
                "passes":{
-                  "total":1221,
-                  "key":62,
-                  "accuracy":45
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
                },
                "tackles":{
-                  "total":29,
-                  "blocks":1,
-                  "interceptions":4
-               },
-               "duels":{
-                  "total":354,
-                  "won":164
-               },
-               "dribbles":{
-                  "attempts":128,
-                  "success":60,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":70,
-                  "committed":31
-               },
-               "cards":{
-                  "yellow":10,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":3,
-                  "missed":1,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":61,
-                  "name":"Ligue 1",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/61.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2020
-               },
-               "games":{
-                  "appearences":18,
-                  "lineups":15,
-                  "minutes":1416,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"7.455555",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":3,
-                  "out":2,
-                  "bench":3
-               },
-               "shots":{
-                  "total":53,
-                  "on":21
-               },
-               "goals":{
-                  "total":9,
-                  "conceded":0,
-                  "assists":5,
-                  "saves":null
-               },
-               "passes":{
-                  "total":916,
-                  "key":61,
-                  "accuracy":40
-               },
-               "tackles":{
-                  "total":14,
+                  "total":null,
                   "blocks":null,
-                  "interceptions":9
-               },
-               "duels":{
-                  "total":362,
-                  "won":173
-               },
-               "dribbles":{
-                  "attempts":155,
-                  "success":87,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":67,
-                  "committed":33
-               },
-               "cards":{
-                  "yellow":6,
-                  "yellowred":1,
-                  "red":1
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":5,
-                  "missed":1,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":61,
-                  "name":"Ligue 1",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/61.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2019
-               },
-               "games":{
-                  "appearences":15,
-                  "lineups":15,
-                  "minutes":1322,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"8.053333",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":3,
-                  "bench":0
-               },
-               "shots":{
-                  "total":70,
-                  "on":36
-               },
-               "goals":{
-                  "total":13,
-                  "conceded":null,
-                  "assists":6,
-                  "saves":null
-               },
-               "passes":{
-                  "total":704,
-                  "key":39,
-                  "accuracy":79
-               },
-               "tackles":{
-                  "total":13,
-                  "blocks":0,
-                  "interceptions":4
+                  "interceptions":null
                },
                "duels":{
                   "total":null,
                   "won":null
                },
                "dribbles":{
-                  "attempts":143,
-                  "success":88,
+                  "attempts":null,
+                  "success":null,
                   "past":null
                },
                "fouls":{
-                  "drawn":62,
-                  "committed":14
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
+                  "missed":0,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":1117,
+            "name":"K. Tierney",
+            "firstname":"Kieran",
+            "lastname":"Tierney",
+            "age":25,
+            "birth":{
+               "date":"1997-06-05",
+               "place":"Douglas",
+               "country":"Isle of Man"
+            },
+            "nationality":"Scotland",
+            "height":"178 cm",
+            "weight":"70 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/1117.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":42,
+                  "name":"Arsenal",
+                  "logo":"https://media.api-sports.io/football/teams/42.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":22,
+                  "lineups":22,
+                  "minutes":1919,
+                  "number":null,
+                  "position":"Defender",
+                  "rating":"6.963636",
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":4,
+                  "bench":4
+               },
+               "shots":{
+                  "total":10,
+                  "on":5
+               },
+               "goals":{
+                  "total":1,
+                  "conceded":0,
+                  "assists":3,
+                  "saves":null
+               },
+               "passes":{
+                  "total":904,
+                  "key":20,
+                  "accuracy":33
+               },
+               "tackles":{
+                  "total":18,
+                  "blocks":5,
+                  "interceptions":15
+               },
+               "duels":{
+                  "total":105,
+                  "won":55
+               },
+               "dribbles":{
+                  "attempts":23,
+                  "success":9,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":16,
+                  "committed":5
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
+                  "missed":0,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":1438,
+            "name":"Bernd Leno",
+            "firstname":"Bernd",
+            "lastname":"Leno",
+            "age":30,
+            "birth":{
+               "date":"1992-03-04",
+               "place":"Bietigheim-Bissingen",
+               "country":"Germany"
+            },
+            "nationality":"Germany",
+            "height":"190 cm",
+            "weight":"83 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/1438.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":42,
+                  "name":"Arsenal",
+                  "logo":"https://media.api-sports.io/football/teams/42.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":4,
+                  "lineups":4,
+                  "minutes":360,
+                  "number":null,
+                  "position":"Goalkeeper",
+                  "rating":"6.650000",
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":29
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":9,
+                  "assists":null,
+                  "saves":10
+               },
+               "passes":{
+                  "total":101,
+                  "key":null,
+                  "accuracy":15
+               },
+               "tackles":{
+                  "total":1,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":5,
+                  "won":4
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
+                  "missed":0,
+                  "saved":0
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":1440,
+            "name":"R. Holding",
+            "firstname":"Rob",
+            "lastname":"Holding",
+            "age":27,
+            "birth":{
+               "date":"1995-09-20",
+               "place":"Stalybridge",
+               "country":"England"
+            },
+            "nationality":"England",
+            "height":"189 cm",
+            "weight":"75 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/1440.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":42,
+                  "name":"Arsenal",
+                  "logo":"https://media.api-sports.io/football/teams/42.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":15,
+                  "lineups":9,
+                  "minutes":839,
+                  "number":null,
+                  "position":"Defender",
+                  "rating":"6.807142",
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":6,
+                  "out":0,
+                  "bench":27
+               },
+               "shots":{
+                  "total":3,
+                  "on":1
+               },
+               "goals":{
+                  "total":1,
+                  "conceded":0,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":476,
+                  "key":null,
+                  "accuracy":34
+               },
+               "tackles":{
+                  "total":13,
+                  "blocks":18,
+                  "interceptions":10
+               },
+               "duels":{
+                  "total":79,
+                  "won":44
+               },
+               "dribbles":{
+                  "attempts":1,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":3,
+                  "committed":9
                },
                "cards":{
                   "yellow":3,
@@ -247,108 +384,55 @@
                   "red":0
                },
                "penalty":{
-                  "won":1,
+                  "won":null,
                   "commited":null,
-                  "scored":4,
-                  "missed":1,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":61,
-                  "name":"Ligue 1",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/61.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2018
-               },
-               "games":{
-                  "appearences":17,
-                  "lineups":16,
-                  "minutes":1443,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"8.164705",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":1,
-                  "out":5,
-                  "bench":1
-               },
-               "shots":{
-                  "total":55,
-                  "on":27
-               },
-               "goals":{
-                  "total":15,
-                  "conceded":null,
-                  "assists":7,
-                  "saves":null
-               },
-               "passes":{
-                  "total":797,
-                  "key":46,
-                  "accuracy":80
-               },
-               "tackles":{
-                  "total":8,
-                  "blocks":0,
-                  "interceptions":5
-               },
-               "duels":{
-                  "total":304,
-                  "won":153
-               },
-               "dribbles":{
-                  "attempts":123,
-                  "success":74,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":58,
-                  "committed":12
-               },
-               "cards":{
-                  "yellow":2,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":2,
-                  "commited":null,
-                  "scored":5,
+                  "scored":0,
                   "missed":0,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":2795,
+            "name":"G. Sigurðsson",
+            "firstname":"Gylfi Þór",
+            "lastname":"Sigurðsson",
+            "age":33,
+            "birth":{
+               "date":"1989-09-08",
+               "place":"Reykjavík",
+               "country":"Iceland"
             },
+            "nationality":"Iceland",
+            "height":"186 cm",
+            "weight":"79 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/2795.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":45,
+                  "name":"Everton",
+                  "logo":"https://media.api-sports.io/football/teams/45.png"
                },
                "league":{
-                  "id":61,
-                  "name":"Ligue 1",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/61.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2017
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":20,
-                  "lineups":20,
-                  "minutes":1797,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"8.845000",
+                  "position":"Midfielder",
+                  "rating":null,
                   "captain":false
                },
                "substitutes":{
@@ -357,63 +441,559 @@
                   "bench":0
                },
                "shots":{
-                  "total":90,
-                  "on":41
+                  "total":null,
+                  "on":null
                },
                "goals":{
-                  "total":19,
+                  "total":0,
                   "conceded":null,
-                  "assists":13,
+                  "assists":null,
                   "saves":null
                },
                "passes":{
-                  "total":1063,
-                  "key":73,
-                  "accuracy":79
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
                },
                "tackles":{
                   "total":null,
                   "blocks":null,
-                  "interceptions":5
+                  "interceptions":null
                },
                "duels":{
-                  "total":455,
-                  "won":269
+                  "total":null,
+                  "won":null
                },
                "dribbles":{
-                  "attempts":212,
-                  "success":142,
+                  "attempts":null,
+                  "success":null,
                   "past":null
                },
                "fouls":{
-                  "drawn":104,
-                  "committed":23
+                  "drawn":null,
+                  "committed":null
                },
                "cards":{
-                  "yellow":5,
-                  "yellowred":1,
+                  "yellow":0,
+                  "yellowred":0,
                   "red":0
                },
                "penalty":{
-                  "won":2,
+                  "won":null,
                   "commited":null,
-                  "scored":4,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":18800,
+            "name":"Marc Navarro",
+            "firstname":"Marc",
+            "lastname":"Navarro Ceciliano",
+            "age":26,
+            "birth":{
+               "date":"1995-07-02",
+               "place":"Barcelona",
+               "country":"Spain"
+            },
+            "nationality":"Spain",
+            "height":"188 cm",
+            "weight":"79 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/18800.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":38,
+                  "name":"Watford",
+                  "logo":"https://media.api-sports.io/football/teams/38.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
+                  "number":null,
+                  "position":"Defender",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":0
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":null,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":19350,
+            "name":"Luka Račić",
+            "firstname":"Luka",
+            "lastname":"Račić",
+            "age":23,
+            "birth":{
+               "date":"1999-05-08",
+               "place":"Greve",
+               "country":"Denmark"
+            },
+            "nationality":"Denmark",
+            "height":"187 cm",
+            "weight":"74 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/19350.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":55,
+                  "name":"Brentford",
+                  "logo":"https://media.api-sports.io/football/teams/55.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
+                  "number":null,
+                  "position":"Defender",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":0
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":null,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":19360,
+            "name":"Jan Žambůrek",
+            "firstname":"Jan",
+            "lastname":"Žambůrek",
+            "age":21,
+            "birth":{
+               "date":"2001-02-13",
+               "place":null,
+               "country":"Czech Republic"
+            },
+            "nationality":"Czech Republic",
+            "height":"182 cm",
+            "weight":"70 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/19360.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":55,
+                  "name":"Brentford",
+                  "logo":"https://media.api-sports.io/football/teams/55.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
+                  "number":null,
+                  "position":"Midfielder",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":0
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":null,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":20126,
+            "name":"J. Sinclair",
+            "firstname":"Jerome",
+            "lastname":"Sinclair",
+            "age":25,
+            "birth":{
+               "date":"1996-09-20",
+               "place":"Birmingham",
+               "country":"England"
+            },
+            "nationality":"England",
+            "height":"181 cm",
+            "weight":"78 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/20126.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":38,
+                  "name":"Watford",
+                  "logo":"https://media.api-sports.io/football/teams/38.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":null,
+                  "lineups":null,
+                  "minutes":null,
+                  "number":null,
+                  "position":"Attacker",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":null,
+                  "out":null,
+                  "bench":null
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":null,
+                  "conceded":null,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":null,
+                  "yellowred":null,
+                  "red":null
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":138786,
+            "name":"Ellis Reco Simms",
+            "firstname":"Ellis Reco",
+            "lastname":"Simms",
+            "age":21,
+            "birth":{
+               "date":"2001-01-05",
+               "place":"Oldham",
+               "country":"England"
+            },
+            "nationality":"England",
+            "height":"183 cm",
+            "weight":"73 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/138786.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":45,
+                  "name":"Everton",
+                  "logo":"https://media.api-sports.io/football/teams/45.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":1,
+                  "lineups":1,
+                  "minutes":62,
+                  "number":null,
+                  "position":"Attacker",
+                  "rating":"6.700000",
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":1,
+                  "bench":6
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":0,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":12,
+                  "key":null,
+                  "accuracy":7
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":1,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":7,
+                  "won":2
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
                   "missed":0,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":138905,
+            "name":"Thomas David  Allan",
+            "firstname":"Thomas David",
+            "lastname":"Allan",
+            "age":23,
+            "birth":{
+               "date":"1999-09-23",
+               "place":"Newcastle upon Tyne",
+               "country":"England"
             },
+            "nationality":"England",
+            "height":"173 cm",
+            "weight":"78 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/138905.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":34,
+                  "name":"Newcastle",
+                  "logo":"https://media.api-sports.io/football/teams/34.png"
                },
                "league":{
-                  "id":66,
-                  "name":"Coupe de France",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/66.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
                   "season":2021
                },
                "games":{
@@ -475,49 +1055,70 @@
                   "missed":null,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":138919,
+            "name":"Thomas Dickson-Peters",
+            "firstname":"Thomas",
+            "lastname":"Dickson-Peters",
+            "age":20,
+            "birth":{
+               "date":"2002-09-16",
+               "place":null,
+               "country":"Scotland"
             },
+            "nationality":"Scotland",
+            "height":"172 cm",
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/138919.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":71,
+                  "name":"Norwich",
+                  "logo":"https://media.api-sports.io/football/teams/71.png"
                },
                "league":{
-                  "id":66,
-                  "name":"Coupe de France",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/66.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2020
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":3,
-                  "lineups":2,
-                  "minutes":137,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"6.700000",
+                  "position":"Midfielder",
+                  "rating":null,
                   "captain":false
                },
                "substitutes":{
-                  "in":1,
-                  "out":2,
+                  "in":0,
+                  "out":0,
                   "bench":1
                },
                "shots":{
-                  "total":4,
-                  "on":2
+                  "total":null,
+                  "on":null
                },
                "goals":{
-                  "total":1,
+                  "total":0,
                   "conceded":0,
-                  "assists":1,
+                  "assists":null,
                   "saves":null
                },
                "passes":{
-                  "total":77,
-                  "key":2,
-                  "accuracy":20
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
                },
                "tackles":{
                   "total":null,
@@ -525,20 +1126,20 @@
                   "interceptions":null
                },
                "duels":{
-                  "total":43,
-                  "won":19
+                  "total":null,
+                  "won":null
                },
                "dribbles":{
-                  "attempts":19,
-                  "success":9,
+                  "attempts":null,
+                  "success":null,
                   "past":null
                },
                "fouls":{
-                  "drawn":10,
-                  "committed":6
+                  "drawn":null,
+                  "committed":null
                },
                "cards":{
-                  "yellow":1,
+                  "yellow":0,
                   "yellowred":0,
                   "red":0
                },
@@ -549,66 +1150,277 @@
                   "missed":0,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":152964,
+            "name":"Christian Fernandes Marques",
+            "firstname":"Christian",
+            "lastname":"Fernandes Marques",
+            "age":19,
+            "birth":{
+               "date":"2003-01-15",
+               "place":"Uster",
+               "country":"Switzerland"
             },
+            "nationality":"Portugal",
+            "height":"187 cm",
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/152964.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":39,
+                  "name":"Wolves",
+                  "logo":"https://media.api-sports.io/football/teams/39.png"
                },
                "league":{
-                  "id":65,
-                  "name":"Coupe de la Ligue",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/65.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2019
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":3,
-                  "lineups":3,
-                  "minutes":300,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"7.533333",
+                  "position":"Defender",
+                  "rating":null,
                   "captain":false
                },
                "substitutes":{
                   "in":0,
                   "out":0,
-                  "bench":0
+                  "bench":2
                },
                "shots":{
-                  "total":11,
-                  "on":5
+                  "total":null,
+                  "on":null
                },
                "goals":{
-                  "total":1,
-                  "conceded":null,
-                  "assists":1,
+                  "total":0,
+                  "conceded":0,
+                  "assists":null,
                   "saves":null
                },
                "passes":{
-                  "total":144,
-                  "key":8,
-                  "accuracy":75
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
                },
                "tackles":{
-                  "total":3,
-                  "blocks":1,
-                  "interceptions":1
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
                },
                "duels":{
-                  "total":24,
-                  "won":15
+                  "total":null,
+                  "won":null
                },
                "dribbles":{
-                  "attempts":30,
-                  "success":11,
+                  "attempts":null,
+                  "success":null,
                   "past":null
                },
                "fouls":{
-                  "drawn":14,
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
+                  "missed":0,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":152971,
+            "name":"Vontae Daley-Campbell",
+            "firstname":"Vontae",
+            "lastname":"Daley-Campbell",
+            "age":21,
+            "birth":{
+               "date":"2001-04-02",
+               "place":"Clapham Town",
+               "country":"England"
+            },
+            "nationality":"England",
+            "height":null,
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/152971.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":46,
+                  "name":"Leicester",
+                  "logo":"https://media.api-sports.io/football/teams/46.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
+                  "number":null,
+                  "position":"Defender",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":5
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":0,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
+                  "yellowred":0,
+                  "red":0
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":0,
+                  "missed":0,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":162189,
+            "name":"Mads Bidstrup",
+            "firstname":"Mads",
+            "lastname":"Bidstrup",
+            "age":21,
+            "birth":{
+               "date":"2001-02-25",
+               "place":"Køge",
+               "country":"Denmark"
+            },
+            "nationality":"Denmark",
+            "height":"175 cm",
+            "weight":"68 kg",
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/162189.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":55,
+                  "name":"Brentford",
+                  "logo":"https://media.api-sports.io/football/teams/55.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":4,
+                  "lineups":0,
+                  "minutes":37,
+                  "number":null,
+                  "position":"Midfielder",
+                  "rating":"6.250000",
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":4,
+                  "out":0,
+                  "bench":18
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":0,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":13,
+                  "key":null,
+                  "accuracy":2
+               },
+               "tackles":{
+                  "total":1,
+                  "blocks":null,
+                  "interceptions":1
+               },
+               "duels":{
+                  "total":6,
+                  "won":1
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
                   "committed":1
                },
                "cards":{
@@ -623,175 +1435,48 @@
                   "missed":0,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":191976,
+            "name":"Joseph Oluwagbemiga Mayowa  Hungbo",
+            "firstname":"Joseph Oluwagbemiga Mayowa",
+            "lastname":"Hungbo",
+            "age":22,
+            "birth":{
+               "date":"2000-01-15",
+               "place":"London",
+               "country":"England"
             },
+            "nationality":"England",
+            "height":"173 cm",
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/191976.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":38,
+                  "name":"Watford",
+                  "logo":"https://media.api-sports.io/football/teams/38.png"
                },
                "league":{
-                  "id":66,
-                  "name":"Coupe de France",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/66.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2019
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":2,
-                  "lineups":2,
-                  "minutes":180,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"7.550000",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":0,
-                  "bench":1
-               },
-               "shots":{
-                  "total":6,
-                  "on":3
-               },
-               "goals":{
-                  "total":2,
-                  "conceded":null,
-                  "assists":null,
-                  "saves":null
-               },
-               "passes":{
-                  "total":85,
-                  "key":4,
-                  "accuracy":76
-               },
-               "tackles":{
-                  "total":null,
-                  "blocks":0,
-                  "interceptions":1
-               },
-               "duels":{
-                  "total":16,
-                  "won":6
-               },
-               "dribbles":{
-                  "attempts":16,
-                  "success":10,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":3,
-                  "committed":3
-               },
-               "cards":{
-                  "yellow":1,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":1,
-                  "missed":0,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":66,
-                  "name":"Coupe de France",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/66.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2018
-               },
-               "games":{
-                  "appearences":3,
-                  "lineups":3,
-                  "minutes":272,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":null,
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":1,
-                  "bench":0
-               },
-               "shots":{
-                  "total":null,
-                  "on":null
-               },
-               "goals":{
-                  "total":2,
-                  "conceded":null,
-                  "assists":null,
-                  "saves":null
-               },
-               "passes":{
-                  "total":null,
-                  "key":null,
-                  "accuracy":null
-               },
-               "tackles":{
-                  "total":null,
-                  "blocks":null,
-                  "interceptions":null
-               },
-               "duels":{
-                  "total":null,
-                  "won":null
-               },
-               "dribbles":{
-                  "attempts":null,
-                  "success":null,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":null,
-                  "committed":null
-               },
-               "cards":{
-                  "yellow":2,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":null,
-                  "missed":null,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":65,
-                  "name":"Coupe de la Ligue",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/65.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2018
-               },
-               "games":{
-                  "appearences":1,
-                  "lineups":1,
-                  "minutes":90,
-                  "number":null,
-                  "position":"Attacker",
+                  "position":"Midfielder",
                   "rating":null,
                   "captain":false
                },
@@ -805,155 +1490,7 @@
                   "on":null
                },
                "goals":{
-                  "total":1,
-                  "conceded":null,
-                  "assists":null,
-                  "saves":null
-               },
-               "passes":{
-                  "total":null,
-                  "key":null,
-                  "accuracy":null
-               },
-               "tackles":{
-                  "total":null,
-                  "blocks":null,
-                  "interceptions":null
-               },
-               "duels":{
-                  "total":null,
-                  "won":null
-               },
-               "dribbles":{
-                  "attempts":null,
-                  "success":null,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":null,
-                  "committed":null
-               },
-               "cards":{
-                  "yellow":1,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":null,
-                  "missed":null,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":65,
-                  "name":"Coupe de la Ligue",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/65.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2017
-               },
-               "games":{
-                  "appearences":2,
-                  "lineups":2,
-                  "minutes":180,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":null,
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":0,
-                  "bench":0
-               },
-               "shots":{
-                  "total":null,
-                  "on":null
-               },
-               "goals":{
-                  "total":1,
-                  "conceded":null,
-                  "assists":null,
-                  "saves":null
-               },
-               "passes":{
-                  "total":null,
-                  "key":null,
-                  "accuracy":null
-               },
-               "tackles":{
-                  "total":null,
-                  "blocks":null,
-                  "interceptions":null
-               },
-               "duels":{
-                  "total":null,
-                  "won":null
-               },
-               "dribbles":{
-                  "attempts":null,
-                  "success":null,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":null,
-                  "committed":null
-               },
-               "cards":{
-                  "yellow":1,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":null,
-                  "missed":null,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":66,
-                  "name":"Coupe de France",
-                  "country":"France",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/66.png",
-                  "flag":"https:\/\/media.api-sports.io\/flags\/fr.svg",
-                  "season":2017
-               },
-               "games":{
-                  "appearences":1,
-                  "lineups":1,
-                  "minutes":90,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":null,
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":0,
-                  "bench":0
-               },
-               "shots":{
-                  "total":null,
-                  "on":null
-               },
-               "goals":{
-                  "total":2,
+                  "total":0,
                   "conceded":null,
                   "assists":null,
                   "saves":null
@@ -993,94 +1530,41 @@
                   "missed":null,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":197807,
+            "name":"Chigozier Caleb Chukwuemeka",
+            "firstname":"Chigozier Caleb",
+            "lastname":"Chukwuemeka",
+            "age":20,
+            "birth":{
+               "date":"2002-01-25",
+               "place":null,
+               "country":"England"
             },
+            "nationality":"England",
+            "height":"190 cm",
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/197807.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":66,
+                  "name":"Aston Villa",
+                  "logo":"https://media.api-sports.io/football/teams/66.png"
                },
                "league":{
-                  "id":2,
-                  "name":"UEFA Champions League",
-                  "country":"World",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/2.png",
-                  "flag":null,
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
                   "season":2021
-               },
-               "games":{
-                  "appearences":6,
-                  "lineups":5,
-                  "minutes":467,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"7.033333",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":1,
-                  "out":0,
-                  "bench":1
-               },
-               "shots":{
-                  "total":5,
-                  "on":1
-               },
-               "goals":{
-                  "total":0,
-                  "conceded":0,
-                  "assists":2,
-                  "saves":null
-               },
-               "passes":{
-                  "total":257,
-                  "key":11,
-                  "accuracy":36
-               },
-               "tackles":{
-                  "total":6,
-                  "blocks":null,
-                  "interceptions":null
-               },
-               "duels":{
-                  "total":72,
-                  "won":41
-               },
-               "dribbles":{
-                  "attempts":24,
-                  "success":14,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":20,
-                  "committed":4
-               },
-               "cards":{
-                  "yellow":1,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":0,
-                  "missed":0,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":null,
-                  "name":"Club Friendlies",
-                  "country":null,
-                  "logo":null,
-                  "flag":null,
-                  "season":"2021"
                },
                "games":{
                   "appearences":0,
@@ -1141,116 +1625,63 @@
                   "missed":null,
                   "saved":null
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":231062,
+            "name":"A. Okonkwo",
+            "firstname":"Arthur",
+            "lastname":"Okonkwo",
+            "age":21,
+            "birth":{
+               "date":"2001-09-09",
+               "place":null,
+               "country":"England"
             },
+            "nationality":"England",
+            "height":null,
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/231062.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":42,
+                  "name":"Arsenal",
+                  "logo":"https://media.api-sports.io/football/teams/42.png"
                },
                "league":{
-                  "id":2,
-                  "name":"UEFA Champions League",
-                  "country":"World",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/2.png",
-                  "flag":null,
-                  "season":2020
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":9,
-                  "lineups":9,
-                  "minutes":746,
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"7.355555",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":3,
-                  "bench":0
-               },
-               "shots":{
-                  "total":23,
-                  "on":17
-               },
-               "goals":{
-                  "total":6,
-                  "conceded":0,
-                  "assists":2,
-                  "saves":null
-               },
-               "passes":{
-                  "total":365,
-                  "key":20,
-                  "accuracy":33
-               },
-               "tackles":{
-                  "total":5,
-                  "blocks":1,
-                  "interceptions":3
-               },
-               "duels":{
-                  "total":182,
-                  "won":86
-               },
-               "dribbles":{
-                  "attempts":63,
-                  "success":33,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":44,
-                  "committed":11
-               },
-               "cards":{
-                  "yellow":3,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":1,
-                  "missed":0,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":null,
-                  "name":"Club Friendlies",
-                  "country":null,
-                  "logo":null,
-                  "flag":null,
-                  "season":"2020"
-               },
-               "games":{
-                  "appearences":2,
-                  "lineups":2,
-                  "minutes":92,
-                  "number":null,
-                  "position":"Attacker",
+                  "position":"Goalkeeper",
                   "rating":null,
                   "captain":false
                },
                "substitutes":{
                   "in":0,
-                  "out":2,
-                  "bench":0
+                  "out":0,
+                  "bench":7
                },
                "shots":{
                   "total":null,
                   "on":null
                },
                "goals":{
-                  "total":3,
-                  "conceded":null,
+                  "total":0,
+                  "conceded":0,
                   "assists":null,
                   "saves":null
                },
@@ -1285,222 +1716,190 @@
                "penalty":{
                   "won":null,
                   "commited":null,
-                  "scored":null,
-                  "missed":null,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":2,
-                  "name":"UEFA Champions League",
-                  "country":"World",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/2.png",
-                  "flag":null,
-                  "season":2019
-               },
-               "games":{
-                  "appearences":7,
-                  "lineups":6,
-                  "minutes":584,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"7.750000",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":1,
-                  "out":0,
-                  "bench":1
-               },
-               "shots":{
-                  "total":22,
-                  "on":6
-               },
-               "goals":{
-                  "total":3,
-                  "conceded":null,
-                  "assists":4,
-                  "saves":null
-               },
-               "passes":{
-                  "total":213,
-                  "key":16,
-                  "accuracy":73
-               },
-               "tackles":{
-                  "total":7,
-                  "blocks":0,
-                  "interceptions":2
-               },
-               "duels":{
-                  "total":74,
-                  "won":46
-               },
-               "dribbles":{
-                  "attempts":57,
-                  "success":37,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":28,
-                  "committed":9
-               },
-               "cards":{
-                  "yellow":3,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
                   "scored":0,
                   "missed":0,
-                  "saved":null
+                  "saved":0
                }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":314661,
+            "name":"J. Danns",
+            "firstname":"Jayden",
+            "lastname":"Danns",
+            "age":null,
+            "birth":{
+               "date":null,
+               "place":null,
+               "country":"England"
             },
+            "nationality":"England",
+            "height":null,
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/314661.png"
+         },
+         "statistics":[
             {
                "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
+                  "id":40,
+                  "name":"Liverpool",
+                  "logo":"https://media.api-sports.io/football/teams/40.png"
                },
                "league":{
-                  "id":2,
-                  "name":"UEFA Champions League",
-                  "country":"World",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/2.png",
-                  "flag":null,
-                  "season":2018
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
                },
                "games":{
-                  "appearences":6,
-                  "lineups":6,
-                  "minutes":532,
+                  "appearences":null,
+                  "lineups":null,
+                  "minutes":null,
                   "number":null,
-                  "position":"Attacker",
-                  "rating":"8.183333",
+                  "position":"Midfielder",
+                  "rating":null,
                   "captain":false
                },
                "substitutes":{
-                  "in":0,
-                  "out":1,
-                  "bench":0
+                  "in":null,
+                  "out":null,
+                  "bench":null
                },
                "shots":{
-                  "total":24,
-                  "on":16
+                  "total":null,
+                  "on":null
                },
                "goals":{
-                  "total":5,
+                  "total":null,
                   "conceded":null,
-                  "assists":2,
+                  "assists":null,
                   "saves":null
                },
                "passes":{
-                  "total":262,
-                  "key":21,
-                  "accuracy":82
-               },
-               "tackles":{
-                  "total":3,
-                  "blocks":2,
-                  "interceptions":2
-               },
-               "duels":{
-                  "total":122,
-                  "won":72
-               },
-               "dribbles":{
-                  "attempts":54,
-                  "success":32,
-                  "past":null
-               },
-               "fouls":{
-                  "drawn":34,
-                  "committed":4
-               },
-               "cards":{
-                  "yellow":2,
-                  "yellowred":0,
-                  "red":0
-               },
-               "penalty":{
-                  "won":null,
-                  "commited":null,
-                  "scored":0,
-                  "missed":0,
-                  "saved":null
-               }
-            },
-            {
-               "team":{
-                  "id":85,
-                  "name":"Paris Saint Germain",
-                  "logo":"https:\/\/media.api-sports.io\/football\/teams\/85.png"
-               },
-               "league":{
-                  "id":2,
-                  "name":"UEFA Champions League",
-                  "country":"World",
-                  "logo":"https:\/\/media.api-sports.io\/football\/leagues\/2.png",
-                  "flag":null,
-                  "season":2017
-               },
-               "games":{
-                  "appearences":7,
-                  "lineups":7,
-                  "minutes":630,
-                  "number":null,
-                  "position":"Attacker",
-                  "rating":"8.771428",
-                  "captain":false
-               },
-               "substitutes":{
-                  "in":0,
-                  "out":0,
-                  "bench":0
-               },
-               "shots":{
-                  "total":28,
-                  "on":14
-               },
-               "goals":{
-                  "total":6,
-                  "conceded":null,
-                  "assists":3,
-                  "saves":null
-               },
-               "passes":{
-                  "total":304,
-                  "key":24,
-                  "accuracy":77
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
                },
                "tackles":{
                   "total":null,
                   "blocks":null,
-                  "interceptions":1
+                  "interceptions":null
                },
                "duels":{
-                  "total":161,
-                  "won":90
+                  "total":null,
+                  "won":null
                },
                "dribbles":{
-                  "attempts":84,
-                  "success":51,
+                  "attempts":null,
+                  "success":null,
                   "past":null
                },
                "fouls":{
-                  "drawn":28,
-                  "committed":8
+                  "drawn":null,
+                  "committed":null
                },
                "cards":{
-                  "yellow":2,
+                  "yellow":null,
+                  "yellowred":null,
+                  "red":null
+               },
+               "penalty":{
+                  "won":null,
+                  "commited":null,
+                  "scored":null,
+                  "missed":null,
+                  "saved":null
+               }
+            }
+         ]
+      },
+      {
+         "player":{
+            "id":350318,
+            "name":"Kamil Conteh",
+            "firstname":"Kamil",
+            "lastname":"Conteh",
+            "age":20,
+            "birth":{
+               "date":"2002-12-26",
+               "place":null,
+               "country":"England"
+            },
+            "nationality":"England",
+            "height":null,
+            "weight":null,
+            "injured":false,
+            "photo":"https://media.api-sports.io/football/players/350318.png"
+         },
+         "statistics":[
+            {
+               "team":{
+                  "id":38,
+                  "name":"Watford",
+                  "logo":"https://media.api-sports.io/football/teams/38.png"
+               },
+               "league":{
+                  "id":39,
+                  "name":"Premier League",
+                  "country":"England",
+                  "logo":"https://media.api-sports.io/football/leagues/39.png",
+                  "flag":"https://media.api-sports.io/flags/gb.svg",
+                  "season":2021
+               },
+               "games":{
+                  "appearences":0,
+                  "lineups":0,
+                  "minutes":0,
+                  "number":null,
+                  "position":"Midfielder",
+                  "rating":null,
+                  "captain":false
+               },
+               "substitutes":{
+                  "in":0,
+                  "out":0,
+                  "bench":1
+               },
+               "shots":{
+                  "total":null,
+                  "on":null
+               },
+               "goals":{
+                  "total":0,
+                  "conceded":0,
+                  "assists":null,
+                  "saves":null
+               },
+               "passes":{
+                  "total":null,
+                  "key":null,
+                  "accuracy":null
+               },
+               "tackles":{
+                  "total":null,
+                  "blocks":null,
+                  "interceptions":null
+               },
+               "duels":{
+                  "total":null,
+                  "won":null
+               },
+               "dribbles":{
+                  "attempts":null,
+                  "success":null,
+                  "past":null
+               },
+               "fouls":{
+                  "drawn":null,
+                  "committed":null
+               },
+               "cards":{
+                  "yellow":0,
                   "yellowred":0,
                   "red":0
                },

@@ -10,25 +10,22 @@ import br.com.futechat.discord.service.SourceApi;
 import br.com.futechat.discord.service.text.FutechatTextService;
 import discord4j.core.object.command.ApplicationCommandInteractionOption;
 
-@Service(CommandType.ALTURA_JOGADOR_RAW_CMD)
-public class AlturaJogadorCommand implements Command {
-	
-	private FutechatTextService futechatTextService;
+@Service(CommandType.TRANSFERENCIAS_JOGADOR_RAW_CMD)
+public class TransferenciasJogador implements Command {
 
-	public AlturaJogadorCommand(@Autowired Map<String, FutechatTextService> sourcePartnerApiServiceMap) {
-		this.futechatTextService = sourcePartnerApiServiceMap.get(SourceApi.API_FOOTBALL.getApiName());
+	private FutechatTextService futechatService;
+
+	public TransferenciasJogador(@Autowired Map<String, FutechatTextService> sourcePartnerApiServiceMap) {
+		this.futechatService = sourcePartnerApiServiceMap.get(SourceApi.API_FOOTBALL.getApiName());
 	}
 
 	@Override
 	public String execute(List<ApplicationCommandInteractionOption> cmdOptions) {
-		
+
 		String playerName = cmdOptions.stream().filter(option -> option.getName().equals("nome"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
-		String teamName = cmdOptions.stream().filter(option -> option.getName().equals("time"))
-				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
-				.get();
-		return futechatTextService.getPlayerHeight(playerName, teamName);
+		return futechatService.getPlayerTransferHistory(playerName);
 	}
 
 }

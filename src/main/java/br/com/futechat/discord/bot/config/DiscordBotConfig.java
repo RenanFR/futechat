@@ -43,7 +43,7 @@ public class DiscordBotConfig {
 			throws IOException {
 		GlobalCommandRegistrar globalCommandRegistrar = new GlobalCommandRegistrar(
 				gatewayDiscordClient.getRestClient());
-		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json"));
+		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json"));
 		return globalCommandRegistrar;
 
 	}
