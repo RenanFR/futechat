@@ -22,7 +22,7 @@ public class FutechatApplication {
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		LOGGER.info("Valor da propriedade de teste {}", test);
+		LOGGER.info("VALOR DA PROPRIEDADE DE TESTE: {}", test);
 	}
 
 }
