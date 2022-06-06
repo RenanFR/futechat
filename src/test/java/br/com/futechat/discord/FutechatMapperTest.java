@@ -39,8 +39,8 @@ public class FutechatMapperTest {
 		String transfersSampleResponse = new String(
 				Files.readAllBytes(Paths.get("src/test/resources/__files/neymar-transfers-sample-response.json")));
 		
-		ApiFootballResponse<ApiFootballTransfersResponse, Map<String, String>> transfersResponse = objectMapper.readValue(transfersSampleResponse,
-				new TypeReference<ApiFootballResponse<ApiFootballTransfersResponse, Map<String, String>>>() {
+		ApiFootballResponse<ApiFootballTransfersResponse> transfersResponse = objectMapper.readValue(transfersSampleResponse,
+				new TypeReference<ApiFootballResponse<ApiFootballTransfersResponse>>() {
 				});
 		
 		PlayerTransferHistory playerTransferHistory = mapper.fromApiFootballTransfersResponseToPlayerTransferHistory(transfersResponse);

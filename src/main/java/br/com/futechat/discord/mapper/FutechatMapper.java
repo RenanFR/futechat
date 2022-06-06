@@ -1,7 +1,6 @@
 package br.com.futechat.discord.mapper;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.mapstruct.Mapper;
@@ -19,7 +18,7 @@ public abstract class FutechatMapper {
 	@Mapping(target = "player.name", expression = "java(apiFootballResponse.response().get(0).player().name())")
 	@Mapping(target = "transfers", source = "response", qualifiedByName = "fromApiFootballTransfersResponseListToTransferList")
 	public abstract PlayerTransferHistory fromApiFootballTransfersResponseToPlayerTransferHistory(
-			ApiFootballResponse<ApiFootballTransfersResponse, Map<String, String>> apiFootballResponse);
+			ApiFootballResponse<ApiFootballTransfersResponse> apiFootballResponse);
 
 	@Named("fromApiFootballTransfersResponseListToTransferList")
 	List<Transfer> fromApiFootballTransfersResponseListToTransferList(

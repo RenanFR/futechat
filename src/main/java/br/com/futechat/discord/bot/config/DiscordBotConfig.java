@@ -29,7 +29,8 @@ public class DiscordBotConfig {
 		client.on(ChatInputInteractionEvent.class).flatMap(commandEvent -> {
 			Command commandHandler = commandHandlersMap.get(commandEvent.getCommandName());
 			if (Optional.ofNullable(commandHandler).isPresent()) {
-				return commandEvent.reply(commandHandler.execute(commandEvent.getOptions()));
+				return commandEvent.deferReply().withEphemeral(true)
+						.then(commandEvent.createFollowup(commandHandler.execute(commandEvent.getOptions())));
 
 			}
 			return commandEvent.reply("Comando não existe no Futechat");
@@ -43,7 +44,7 @@ public class DiscordBotConfig {
 			throws IOException {
 		GlobalCommandRegistrar globalCommandRegistrar = new GlobalCommandRegistrar(
 				gatewayDiscordClient.getRestClient());
-		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json"));
+		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json", "artilheiro.json"));
 		return globalCommandRegistrar;
 
 	}

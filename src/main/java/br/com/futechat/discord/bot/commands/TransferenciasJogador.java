@@ -2,7 +2,10 @@ package br.com.futechat.discord.bot.commands;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,8 @@ import discord4j.core.object.command.ApplicationCommandInteractionOption;
 
 @Service(CommandType.TRANSFERENCIAS_JOGADOR_RAW_CMD)
 public class TransferenciasJogador implements Command {
+	
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	private FutechatTextService futechatService;
 
@@ -25,7 +30,11 @@ public class TransferenciasJogador implements Command {
 		String playerName = cmdOptions.stream().filter(option -> option.getName().equals("nome"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
-		return futechatService.getPlayerTransferHistory(playerName);
+		Optional<String> teamName = cmdOptions.stream().filter(option -> option.getName().equals("time"))
+				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny();
+		String playerTransferHistory = futechatService.getPlayerTransferHistory(playerName, teamName, false);
+		LOGGER.info("HISTORICO DE TRANSFERENCIAS DO {} QUE JOGA NO {} E\n: {}", playerName, teamName, playerTransferHistory);
+		return playerTransferHistory;
 	}
 
 }

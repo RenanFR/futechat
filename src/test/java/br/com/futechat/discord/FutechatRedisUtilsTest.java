@@ -35,8 +35,8 @@ public class FutechatRedisUtilsTest {
 	@Test
 	public void internalApiFootballMapsShouldBeFulfilledCorrectly() {
 		futechatRedisUtils.fillApiFootballNameToIdMaps();
-		assertTrue(futechatRedisUtils.getPlayersApiFootballMap().containsKey(new Triplet<String, String, String>(
-				"R. Holding", "England", "https://media.api-sports.io/football/players/1440.png")));
+		assertTrue(futechatRedisUtils.getPlayersApiFootballMap().containsKey(new Triplet<String, String, Integer>(
+				"R. Holding", "England", 42)));
 		assertTrue(futechatRedisUtils.getTeamsApiFootballMap()
 				.containsKey(new Triplet<String, String, String>("Arsenal", "ARS", "England")));
 	}

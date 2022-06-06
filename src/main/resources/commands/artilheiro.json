@@ -1,0 +1,18 @@
+{
+	"name": "artilheiro",
+	"description": "Te informa o artilheiro para a temporada e liga informadas e a quantidade de gols feitos",
+	"options": [
+		{
+			"name": "temporada",
+			"description": "Ano da temporada em questão",
+			"type": 4,
+			"required": true
+		},
+		{
+			"name": "liga",
+			"description": "Liga cujo artilheiro queremos buscar",
+			"type": 3,
+			"required": true
+		}
+	]
+}

@@ -31,7 +31,7 @@ public class ApiFootballClientTest {
 	@Test
 	public void shouldFetchSeasonsFromApi() {
 
-		ApiFootballResponse<Integer, Object[]> seasons = apiFootballClient.seasons();
+		ApiFootballResponse<Integer> seasons = apiFootballClient.seasons();
 		assertNotNull(seasons);
 		assertEquals("leagues/seasons", seasons.get());
 		assertTrue(seasons.response().contains(LocalDate.now().getYear()));
@@ -39,7 +39,7 @@ public class ApiFootballClientTest {
 
 	@Test
 	public void shouldFetchLeagueInformationFromApi() {
-		ApiFootballResponse<ApiFootballLeagueResponse, Map<String, String>> leagues = apiFootballClient
+		ApiFootballResponse<ApiFootballLeagueResponse> leagues = apiFootballClient
 				.leagues(Map.of("name", "Premier League"));
 		assertEquals("leagues", leagues.get());
 		ApiFootballLeagueResponse premierLeague = leagues.response().get(0);
@@ -54,14 +54,14 @@ public class ApiFootballClientTest {
 
 	@Test
 	public void shouldFetchTeamsInformationFromApi() {
-		ApiFootballResponse<ApiFootballTeamsResponse, Map<String, String>> teams = apiFootballClient.teams(Map.of("name", "Arsenal"));
+		ApiFootballResponse<ApiFootballTeamsResponse> teams = apiFootballClient.teams(Map.of("name", "Arsenal"));
 		assertEquals("teams", teams.get());
 		assertEquals("England", teams.response().get(0).team().country());
 	}
 	
 	@Test
 	public void shouldFetchAdultoNey() {
-		ApiFootballResponse<ApiFootballPlayersResponse, Map<String, String>> players = apiFootballClient.players(Map.of("search", "Neymar", "team", "85"));
+		ApiFootballResponse<ApiFootballPlayersResponse> players = apiFootballClient.players(Map.of("search", "Neymar", "team", "85"));
 		assertEquals("players", players.get());
 		assertEquals("da Silva Santos Júnior", players.response().get(0).player().lastname());
 	}

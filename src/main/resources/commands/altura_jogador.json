@@ -13,6 +13,12 @@
             "description": "Time onde joga",
             "type": 3,
             "required": true
+        },
+        {
+            "name": "pais",
+            "description": "País de origem do time (Caso haja mais de um time com esse mesmo nome no mundo)",
+            "type": 3,
+            "required": false
         }
     ]
 }

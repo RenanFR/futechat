@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import br.com.futechat.discord.api.client.ApiFootballClient;
 import br.com.futechat.discord.api.model.ApiFootballLeague;
 import br.com.futechat.discord.api.model.ApiFootballLeagueResponse;
-import br.com.futechat.discord.api.model.ApiFootballPlayer;
 import br.com.futechat.discord.api.model.ApiFootballPlayersResponse;
 import br.com.futechat.discord.api.model.ApiFootballTeam;
 import br.com.futechat.discord.api.model.ApiFootballTeamsResponse;
@@ -32,14 +31,14 @@ public class FutechatRedisUtils {
 	private static final String SEASON_PARAM = "season";
 
 	private ApiFootballClient apiFootballClient;
-	private RedisTemplate<Triplet<String, String, String>, Integer> redisTemplate;
+	private RedisTemplate<Triplet<String, String, ?>, Integer> redisTemplate;
 
 	private Map<Triplet<String, String, String>, Integer> teamsApiFootballMap = new HashMap<>();
-	private Map<Triplet<String, String, String>, Integer> playersApiFootballMap = new HashMap<>();
+	private Map<Triplet<String, String, Integer>, Integer> playersApiFootballMap = new HashMap<>();
 
 	@Autowired
 	public FutechatRedisUtils(ApiFootballClient apiFootballClient,
-			RedisTemplate<Triplet<String, String, String>, Integer> redisTemplate) {
+			RedisTemplate<Triplet<String, String, ?>, Integer> redisTemplate) {
 		this.apiFootballClient = apiFootballClient;
 		this.redisTemplate = redisTemplate;
 	}
@@ -72,14 +71,15 @@ public class FutechatRedisUtils {
 							league.name(), currentSeasonYear);
 					teamsApiFootballMap.putAll(teamLeagueMap);
 
-					Map<Triplet<String, String, String>, Integer> playerLeagueMap = apiFootballClient
+					Map<Triplet<String, String, Integer>, Integer> playerLeagueMap = apiFootballClient
 							.players(Map.of(SEASON_PARAM, currentSeasonYear.toString(), LEAGUE_PARAM,
 									String.valueOf(league.id())))
-							.response().stream().map(ApiFootballPlayersResponse::player).collect(
-									Collectors.toMap(
-											(ApiFootballPlayer player) -> new Triplet<String, String, String>(
-													player.name(), player.nationality(), player.photo()),
-											ApiFootballPlayer::id));
+							.response().stream()
+							.collect(Collectors.toMap((
+									ApiFootballPlayersResponse playersResponse) -> new Triplet<String, String, Integer>(
+											playersResponse.player().name(), playersResponse.player().nationality(),
+											playersResponse.statistics().get(0).team().id()),
+									(ApiFootballPlayersResponse playersResponse) -> playersResponse.player().id()));
 					LOGGER.trace("{} JOGADORES ENCONTRADOS PARA A LIGA {} NA TEMPORADA {}", playerLeagueMap.size(),
 							league.name(), currentSeasonYear);
 					playersApiFootballMap.putAll(playerLeagueMap);
@@ -94,7 +94,7 @@ public class FutechatRedisUtils {
 		return teamsApiFootballMap;
 	}
 
-	public Map<Triplet<String, String, String>, Integer> getPlayersApiFootballMap() {
+	public Map<Triplet<String, String, Integer>, Integer> getPlayersApiFootballMap() {
 		return playersApiFootballMap;
 	}
 

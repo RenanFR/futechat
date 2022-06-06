@@ -8,11 +8,11 @@ import br.com.futechat.discord.utils.FutechatRedisUtils;
 
 @Component
 public class ApiFootballDataFetchSchedule {
-	
+
 	@Autowired
 	private FutechatRedisUtils futechatRedisUtils;
 
-	@Scheduled(cron = "0   18  *   *   *")
+	@Scheduled(cron = "0 0 0 * * ?")
 	public void fetchDataFromApiFootballToAvoidTooManyCalls() {
 		futechatRedisUtils.fillApiFootballNameToIdMaps();
 
