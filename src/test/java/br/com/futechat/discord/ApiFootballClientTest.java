@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDate;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class ApiFootballClientTest {
 	private ApiFootballClient apiFootballClient;
 
 	@Test
+	@Ignore
 	public void shouldFetchSeasonsFromApi() {
 
 		ApiFootballResponse<Integer> seasons = apiFootballClient.seasons();
@@ -38,6 +40,7 @@ public class ApiFootballClientTest {
 	}
 
 	@Test
+	@Ignore
 	public void shouldFetchLeagueInformationFromApi() {
 		ApiFootballResponse<ApiFootballLeagueResponse> leagues = apiFootballClient
 				.leagues(Map.of("name", "Premier League"));
@@ -53,6 +56,7 @@ public class ApiFootballClientTest {
 	}
 
 	@Test
+	@Ignore
 	public void shouldFetchTeamsInformationFromApi() {
 		ApiFootballResponse<ApiFootballTeamsResponse> teams = apiFootballClient.teams(Map.of("name", "Arsenal"));
 		assertEquals("teams", teams.get());
@@ -60,10 +64,20 @@ public class ApiFootballClientTest {
 	}
 	
 	@Test
+	@Ignore
 	public void shouldFetchAdultoNey() {
 		ApiFootballResponse<ApiFootballPlayersResponse> players = apiFootballClient.players(Map.of("search", "Neymar", "team", "85"));
 		assertEquals("players", players.get());
 		assertEquals("da Silva Santos Júnior", players.response().get(0).player().lastname());
+	}
+	
+	@Test
+	public void shouldGetTopScorers() {
+		ApiFootballResponse<ApiFootballPlayersResponse> topScorers = apiFootballClient
+				.topScorers(Map.of("league", "39", "season", "2021"));
+		assertEquals("players/topscorers", topScorers.get());
+		assertEquals("Son Heung-Min", topScorers.response().get(0).player().name());
+		assertEquals(23, topScorers.response().get(0).statistics().get(0).goals().total());
 	}
 
 }

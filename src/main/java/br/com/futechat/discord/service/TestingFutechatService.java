@@ -1,7 +1,9 @@
 package br.com.futechat.discord.service;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.javatuples.Pair;
 import org.springframework.stereotype.Service;
 
 import br.com.futechat.discord.model.PlayerTransferHistory;
@@ -10,18 +12,18 @@ import br.com.futechat.discord.model.PlayerTransferHistory;
 public class TestingFutechatService implements FutechatService {
 
 	@Override
-	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName, boolean useCache) {
+	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName) {
 		return "1,65m";
 	}
 
 	@Override
-	public PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName, boolean useCache) {
+	public PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getLeagueStrikerForTheSeason(Long seasonYear, String leagueName, boolean useCache) {
+	public List<Pair<String, Integer>> getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

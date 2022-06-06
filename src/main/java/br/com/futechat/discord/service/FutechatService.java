@@ -1,15 +1,18 @@
 package br.com.futechat.discord.service;
 
+import java.util.List;
 import java.util.Optional;
+
+import org.javatuples.Pair;
 
 import br.com.futechat.discord.model.PlayerTransferHistory;
 
 public interface FutechatService {
 
-	String getPlayerHeight(String playerName, String teamName, Optional<String> countryName, boolean useCache);
+	String getPlayerHeight(String playerName, String teamName, Optional<String> countryName);
 	
-	PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName, boolean useCache);
+	PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName);
 	
-	String getLeagueStrikerForTheSeason(Long seasonYear, String leagueName, boolean useCache);
+	List<Pair<String, Integer>> getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName);
 
 }

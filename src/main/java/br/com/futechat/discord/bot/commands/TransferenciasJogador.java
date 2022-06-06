@@ -15,7 +15,7 @@ import discord4j.core.object.command.ApplicationCommandInteractionOption;
 
 @Service(CommandType.TRANSFERENCIAS_JOGADOR_RAW_CMD)
 public class TransferenciasJogador implements Command {
-	
+
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	private FutechatTextService futechatService;
@@ -32,8 +32,9 @@ public class TransferenciasJogador implements Command {
 				.get();
 		Optional<String> teamName = cmdOptions.stream().filter(option -> option.getName().equals("time"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny();
-		String playerTransferHistory = futechatService.getPlayerTransferHistory(playerName, teamName, false);
-		LOGGER.info("HISTORICO DE TRANSFERENCIAS DO {} QUE JOGA NO {} E\n: {}", playerName, teamName, playerTransferHistory);
+		String playerTransferHistory = futechatService.getPlayerTransferHistory(playerName, teamName);
+		LOGGER.info("HISTORICO DE TRANSFERENCIAS DO {} QUE JOGA NO {} E\n: {}", playerName, teamName,
+				playerTransferHistory);
 		return playerTransferHistory;
 	}
 

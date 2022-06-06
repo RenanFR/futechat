@@ -32,8 +32,7 @@ public class ArtilheiroCommand implements Command {
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
 
-		String leagueStrikerForTheSeason = futechatTextService.getLeagueStrikerForTheSeason(seasonYear, leagueName,
-				false);
+		String leagueStrikerForTheSeason = futechatTextService.getLeagueTopScorersForTheSeason(seasonYear.intValue(), leagueName);
 
 		LOGGER.info("LISTA DE ARTILHEIROS DA LIGA {} NA TEMPORADA {}: {}", leagueName, seasonYear,
 				leagueStrikerForTheSeason);

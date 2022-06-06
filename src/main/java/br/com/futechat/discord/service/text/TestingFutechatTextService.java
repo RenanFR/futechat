@@ -15,17 +15,17 @@ public class TestingFutechatTextService implements FutechatTextService {
 	private TestingFutechatService futechatService;
 
 	@Override
-	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName, boolean useCache) {
-		return futechatService.getPlayerHeight(playerName, teamName, countryName, useCache);
+	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName) {
+		return futechatService.getPlayerHeight(playerName, teamName, countryName);
 	}
 
 	@Override
-	public String getPlayerTransferHistory(String playerName, Optional<String> teamName, boolean useCache) {
-		return String.valueOf(futechatService.getPlayerTransferHistory(playerName, teamName, useCache));
+	public String getPlayerTransferHistory(String playerName, Optional<String> teamName) {
+		return String.valueOf(futechatService.getPlayerTransferHistory(playerName, teamName));
 	}
 
 	@Override
-	public String getLeagueStrikerForTheSeason(Long seasonYear, String leagueName, boolean useCache) {
+	public String getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

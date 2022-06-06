@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import br.com.futechat.discord.exception.LeagueNotFoundException;
 import br.com.futechat.discord.exception.PlayerNotFoundException;
 import br.com.futechat.discord.exception.TeamNotFoundException;
 
@@ -24,10 +25,10 @@ public class ApiFootballAspect {
 	@Around("whenToCall()")
 	public Object handlePlayerNotFound(ProceedingJoinPoint joinPoint) throws Throwable {
 
-		LOGGER.info("Interceptando execucao de: {}", joinPoint.getSignature().getName());
+		LOGGER.info("INTERCEPTANDO EXECUCAO DE: {}", joinPoint.getSignature().getName());
 		try {
 			return joinPoint.proceed();
-		} catch (PlayerNotFoundException | TeamNotFoundException e) {
+		} catch (PlayerNotFoundException | TeamNotFoundException | LeagueNotFoundException e) {
 			return e.getMessage();
 		}
 	}

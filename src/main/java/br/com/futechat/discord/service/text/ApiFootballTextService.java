@@ -1,9 +1,12 @@
 package br.com.futechat.discord.service.text;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.javatuples.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,16 +27,15 @@ public class ApiFootballTextService implements FutechatTextService {
 	}
 
 	@Override
-	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName, boolean useCache) {
-		return apiFootballService.getPlayerHeight(playerName, teamName, countryName, useCache);
+	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName) {
+		return apiFootballService.getPlayerHeight(playerName, teamName, countryName);
 	}
 
 	@Override
-	public String getPlayerTransferHistory(String playerName, Optional<String> teamName, boolean useCache) {
+	public String getPlayerTransferHistory(String playerName, Optional<String> teamName) {
 		StringBuilder finalTextWithTransferHistory = new StringBuilder();
 		finalTextWithTransferHistory.append("Transferências do " + playerName + "\n");
-		PlayerTransferHistory playerTransferHistory = apiFootballService.getPlayerTransferHistory(playerName, teamName,
-				useCache);
+		PlayerTransferHistory playerTransferHistory = apiFootballService.getPlayerTransferHistory(playerName, teamName);
 		String transfersText = playerTransferHistory.transfers().stream()
 				.map(transfer -> transfer.date().format(DateTimeFormatter.ofPattern(DATE_TIME_PATTERN)) + ": "
 						+ transfer.teamOut() + "->" + transfer.teamIn() + " (" + transfer.type() + ")")
@@ -43,8 +45,18 @@ public class ApiFootballTextService implements FutechatTextService {
 	}
 
 	@Override
-	public String getLeagueStrikerForTheSeason(Long seasonYear, String leagueName, boolean useCache) {
-		return apiFootballService.getLeagueStrikerForTheSeason(seasonYear, leagueName, useCache);
+	public String getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName) {
+		StringBuilder finalTextLeagueTopScorers = new StringBuilder();
+		finalTextLeagueTopScorers.append("Artilheiros da " + leagueName + " no ano " + seasonYear + ":\n");
+		List<Pair<String, Integer>> topScorers = apiFootballService.getLeagueTopScorersForTheSeason(seasonYear,
+				leagueName);
+		Comparator<Pair<String, Integer>> pairComparator = (Pair<String, Integer> pairOne,
+				Pair<String, Integer> pairTwo) -> pairOne.getValue1().compareTo(pairTwo.getValue1());
+		String goalScorerText = topScorers.stream().sorted(pairComparator.reversed())
+				.map(scorerAndGoalsEntry -> scorerAndGoalsEntry.getValue0() + " -> " + scorerAndGoalsEntry.getValue1())
+				.collect(Collectors.joining("\n"));
+		finalTextLeagueTopScorers.append(goalScorerText);
+		return finalTextLeagueTopScorers.toString();
 	}
 
 }

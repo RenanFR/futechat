@@ -12,20 +12,17 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import br.com.futechat.discord.api.client.config.FeignConfig;
-import br.com.futechat.discord.config.RedisConfig;
 import br.com.futechat.discord.mapper.FutechatMapperImpl;
 import br.com.futechat.discord.service.ApiFootballService;
 import br.com.futechat.discord.service.TestingFutechatService;
 import br.com.futechat.discord.service.text.ApiFootballTextService;
 import br.com.futechat.discord.service.text.FutechatTextService;
 import br.com.futechat.discord.service.text.TestingFutechatTextService;
-import br.com.futechat.discord.utils.FutechatRedisUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")
 @SpringBootTest(classes = { ApiFootballTextService.class, ApiFootballService.class, TestingFutechatTextService.class,
-		TestingFutechatService.class, FeignConfig.class, FutechatMapperImpl.class, FutechatRedisUtils.class,
-		RedisConfig.class })
+		TestingFutechatService.class, FeignConfig.class, FutechatMapperImpl.class })
 public class FutechatServiceTest {
 
 	@Autowired
