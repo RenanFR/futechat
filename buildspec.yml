@@ -5,7 +5,9 @@ phases:
     - echo Logging in to Amazon ECR....
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1
+    - AWS_ACCOUNT_ID=270167558056
     - echo $AWS_DEFAULT_REGION
+    - echo $AWS_ACCOUNT_ID
     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com    
     # Get commit hash value to tag the image
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
