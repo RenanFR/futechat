@@ -6,16 +6,18 @@ phases:
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1
     - AWS_ACCOUNT_ID=270167558056
+    - APPLICATION_NAME=futechat
+    - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APPLICATION_NAME
     - echo $AWS_DEFAULT_REGION
     - echo $AWS_ACCOUNT_ID
-    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com    
+    - echo $APPLICATION_NAME
+    - echo $REPOSITORY_URI
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin     
     # Get commit hash value to tag the image
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
     - IMAGE_TAG=${COMMIT_HASH:=latest}
     # Replace with your application name
-    - APPLICATION_NAME=futechat
     # Replace with this 435320931996.dkr.ecr.ap-south-1.amazonaws.com to your repository URI
-    - REPOSITORY_URI=270167558056.dkr.ecr.sa-east-1.amazonaws.com/$APPLICATION_NAME
   build: 
     commands: 
     - echo Build started on `date` 
