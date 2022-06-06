@@ -20,7 +20,7 @@ public class TestingFutechatTextService implements FutechatTextService {
 	}
 
 	@Override
-	public String getPlayerTransferHistory(String playerName, Optional<String> teamName) {
+	public String getPlayerTransferHistory(String playerName, String teamName) {
 		return String.valueOf(futechatService.getPlayerTransferHistory(playerName, teamName));
 	}
 

@@ -11,7 +11,7 @@ public interface FutechatService {
 
 	String getPlayerHeight(String playerName, String teamName, Optional<String> countryName);
 	
-	PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName);
+	PlayerTransferHistory getPlayerTransferHistory(String playerName, String teamName);
 	
 	List<Pair<String, Integer>> getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName);
 

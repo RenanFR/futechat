@@ -46,7 +46,7 @@ public class ApiFootballServiceTest {
 
 	@Test
 	public void shouldGetNeymarTransferHistory() {
-		assertEquals("Santos", futechatService.getPlayerTransferHistory("Neymar", Optional.of("Paris Saint Germain"))
+		assertEquals("Santos", futechatService.getPlayerTransferHistory("Neymar", "Paris Saint Germain")
 				.transfers().get(0).teamOut());
 	}
 	

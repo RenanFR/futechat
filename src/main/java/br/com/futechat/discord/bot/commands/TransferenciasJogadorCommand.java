@@ -2,7 +2,6 @@ package br.com.futechat.discord.bot.commands;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,13 +13,13 @@ import br.com.futechat.discord.service.text.FutechatTextService;
 import discord4j.core.object.command.ApplicationCommandInteractionOption;
 
 @Service(CommandType.TRANSFERENCIAS_JOGADOR_RAW_CMD)
-public class TransferenciasJogador implements Command {
+public class TransferenciasJogadorCommand implements Command {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	private FutechatTextService futechatService;
 
-	public TransferenciasJogador(@Autowired Map<String, FutechatTextService> sourcePartnerApiServiceMap) {
+	public TransferenciasJogadorCommand(@Autowired Map<String, FutechatTextService> sourcePartnerApiServiceMap) {
 		this.futechatService = sourcePartnerApiServiceMap.get(SourceApi.API_FOOTBALL.getApiName());
 	}
 
@@ -30,8 +29,9 @@ public class TransferenciasJogador implements Command {
 		String playerName = cmdOptions.stream().filter(option -> option.getName().equals("nome"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
-		Optional<String> teamName = cmdOptions.stream().filter(option -> option.getName().equals("time"))
-				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny();
+		String teamName = cmdOptions.stream().filter(option -> option.getName().equals("time"))
+				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
+				.get();
 		String playerTransferHistory = futechatService.getPlayerTransferHistory(playerName, teamName);
 		LOGGER.info("HISTORICO DE TRANSFERENCIAS DO {} QUE JOGA NO {} E\n: {}", playerName, teamName,
 				playerTransferHistory);

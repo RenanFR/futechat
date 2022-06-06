@@ -6,7 +6,7 @@ public interface FutechatTextService {
 
 	String getPlayerHeight(String playerName, String teamName, Optional<String> countryName);
 
-	String getPlayerTransferHistory(String playerName, Optional<String> teamName);
+	String getPlayerTransferHistory(String playerName, String teamName);
 	
 	String getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName);
 

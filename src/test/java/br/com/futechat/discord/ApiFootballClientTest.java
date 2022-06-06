@@ -30,7 +30,6 @@ public class ApiFootballClientTest {
 	private ApiFootballClient apiFootballClient;
 
 	@Test
-	@Ignore
 	public void shouldFetchSeasonsFromApi() {
 
 		ApiFootballResponse<Integer> seasons = apiFootballClient.seasons();
@@ -40,7 +39,6 @@ public class ApiFootballClientTest {
 	}
 
 	@Test
-	@Ignore
 	public void shouldFetchLeagueInformationFromApi() {
 		ApiFootballResponse<ApiFootballLeagueResponse> leagues = apiFootballClient
 				.leagues(Map.of("name", "Premier League"));
@@ -56,7 +54,6 @@ public class ApiFootballClientTest {
 	}
 
 	@Test
-	@Ignore
 	public void shouldFetchTeamsInformationFromApi() {
 		ApiFootballResponse<ApiFootballTeamsResponse> teams = apiFootballClient.teams(Map.of("name", "Arsenal"));
 		assertEquals("teams", teams.get());

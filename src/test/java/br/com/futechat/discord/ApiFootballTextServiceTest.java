@@ -4,8 +4,6 @@ import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Optional;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,20 +39,32 @@ public class ApiFootballTextServiceTest {
 	@Test
 	public void shouldGetNeymarTransferHistoryText() {
 		String playerTransferHistoryText = apiFootballTextService.getPlayerTransferHistory("Neymar",
-				Optional.of("Paris Saint Germain"));
+				"Paris Saint Germain");
 		assertTrue(playerTransferHistoryText.contains("Transferências"));
 	}
 
 	@Test
+	public void whenNonExistingTeamIsSearchedThenExceptionTextShouldBeReturned() {
+		String playerTransferHistoryText = apiFootballTextService.getPlayerTransferHistory("Rogerio Vaughan", "ESPN");
+		assertEquals("O time ESPN nao foi encontrado", playerTransferHistoryText);
+	}
+	
+	@Test
 	public void whenNonExistingPlayerIsSearchedThenExceptionTextShouldBeReturned() {
-		String playerTransferHistoryText = apiFootballTextService.getPlayerTransferHistory("Rogerio Vaughan",
-				Optional.empty());
+		String playerTransferHistoryText = apiFootballTextService.getPlayerTransferHistory("Rogerio Vaughan", "Paris Saint Germain");
 		assertEquals("O jogador Rogerio Vaughan nao foi encontrado", playerTransferHistoryText);
 	}
 	
 	@Test
+	public void whenNonExistingLeagueIsSearchedThenExceptionTextShouldBeReturned() {
+		String leagueTopScorers = apiFootballTextService.getLeagueTopScorersForTheSeason(2021, "Desimpedidos");
+		assertEquals("A liga Desimpedidos nao foi encontrada", leagueTopScorers);
+	}
+
+	@Test
 	public void textWithTopScorersShouldBeAvailableToRead() {
-		String leagueTopScorersForTheSeason = apiFootballTextService.getLeagueTopScorersForTheSeason(2021, "Premier League");
+		String leagueTopScorersForTheSeason = apiFootballTextService.getLeagueTopScorersForTheSeason(2021,
+				"Premier League");
 		assertTrue(leagueTopScorersForTheSeason.contains("Artilheiros"));
 	}
 

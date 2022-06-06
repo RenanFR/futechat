@@ -6,4 +6,4 @@ logging:
   group:
     utils: br.com.futechat.discord.utils
   level:
-    utils: TRACE    
+    utils: TRACE

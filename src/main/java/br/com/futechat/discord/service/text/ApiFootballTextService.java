@@ -32,7 +32,7 @@ public class ApiFootballTextService implements FutechatTextService {
 	}
 
 	@Override
-	public String getPlayerTransferHistory(String playerName, Optional<String> teamName) {
+	public String getPlayerTransferHistory(String playerName, String teamName) {
 		StringBuilder finalTextWithTransferHistory = new StringBuilder();
 		finalTextWithTransferHistory.append("Transferências do " + playerName + "\n");
 		PlayerTransferHistory playerTransferHistory = apiFootballService.getPlayerTransferHistory(playerName, teamName);

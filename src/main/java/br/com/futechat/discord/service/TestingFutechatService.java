@@ -17,7 +17,7 @@ public class TestingFutechatService implements FutechatService {
 	}
 
 	@Override
-	public PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName) {
+	public PlayerTransferHistory getPlayerTransferHistory(String playerName, String teamName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

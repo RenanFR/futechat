@@ -56,13 +56,11 @@ public class ApiFootballService implements FutechatService {
 	@Override
 	public String getPlayerHeight(String playerName, String teamName, Optional<String> countryName) {
 		ApiFootballResponse<ApiFootballTeamsResponse> teams = apiFootballClient.teams(Map.of(NAME_PARAM, teamName));
-		Optional<ApiFootballTeam> team = teams.response().stream().map(ApiFootballTeamsResponse::team).findFirst();
-		if (team.isPresent()) {
-			Integer teamId = team.get().id();
-			ApiFootballPlayer player = getPlayerByNameAndTeamId(playerName, teamId);
-			return player.height();
-		}
-		return "Não encontrei o jogador " + playerName + " do time " + teamName;
+		ApiFootballTeam team = teams.response().stream().map(ApiFootballTeamsResponse::team).findFirst()
+				.orElseThrow(() -> new TeamNotFoundException(teamName));
+		Integer teamId = team.id();
+		ApiFootballPlayer player = getPlayerByNameAndTeamId(playerName, teamId);
+		return player.height();
 	}
 
 	private ApiFootballPlayer getPlayerByNameAndTeamId(String playerName, Integer teamId) {
@@ -72,20 +70,17 @@ public class ApiFootballService implements FutechatService {
 	}
 
 	@Override
-	public PlayerTransferHistory getPlayerTransferHistory(String playerName, Optional<String> teamName) {
-		if (teamName.isPresent()) {
-			int teamId = apiFootballClient.teams(Map.of(NAME_PARAM, teamName.get())).response().stream()
-					.map(ApiFootballTeamsResponse::team).findAny()
-					.orElseThrow(() -> new TeamNotFoundException(teamName.get())).id();
-			ApiFootballPlayer player = getPlayerByNameAndTeamId(playerName, teamId);
-			ApiFootballResponse<ApiFootballTransfersResponse> transfers = apiFootballClient
-					.transfers(Map.of(PLAYER_PARAM, String.valueOf(player.id())));
-			PlayerTransferHistory playerTransferHistory = mapper
-					.fromApiFootballTransfersResponseToPlayerTransferHistory(transfers);
-			playerTransferHistory.transfers().sort(Comparator.comparing(Transfer::date));
-			return playerTransferHistory;
-		}
-		throw new PlayerNotFoundException(playerName);
+	public PlayerTransferHistory getPlayerTransferHistory(String playerName, String teamName) {
+		int teamId = apiFootballClient.teams(Map.of(NAME_PARAM, teamName)).response().stream()
+				.map(ApiFootballTeamsResponse::team).findAny().orElseThrow(() -> new TeamNotFoundException(teamName))
+				.id();
+		ApiFootballPlayer player = getPlayerByNameAndTeamId(playerName, teamId);
+		ApiFootballResponse<ApiFootballTransfersResponse> transfers = apiFootballClient
+				.transfers(Map.of(PLAYER_PARAM, String.valueOf(player.id())));
+		PlayerTransferHistory playerTransferHistory = mapper
+				.fromApiFootballTransfersResponseToPlayerTransferHistory(transfers);
+		playerTransferHistory.transfers().sort(Comparator.comparing(Transfer::date));
+		return playerTransferHistory;
 
 	}
 
@@ -93,10 +88,8 @@ public class ApiFootballService implements FutechatService {
 	public List<Pair<String, Integer>> getLeagueTopScorersForTheSeason(Integer seasonYear, String leagueName) {
 		Integer leagueId = apiFootballClient
 				.leagues(Map.of(NAME_PARAM, leagueName, SEASON_PARAM, seasonYear.toString())).response().stream()
-				.filter(leagueResponse -> leagueResponse.seasons().get(0).coverage().topScorers())
-				.limit(1)
-				.map(ApiFootballLeagueResponse::league)
-				.mapToInt(ApiFootballLeague::id).findFirst()
+				.filter(leagueResponse -> leagueResponse.seasons().get(0).coverage().topScorers()).limit(1)
+				.map(ApiFootballLeagueResponse::league).mapToInt(ApiFootballLeague::id).findFirst()
 				.orElseThrow(() -> new LeagueNotFoundException(leagueName));
 		List<Pair<String, Integer>> topScorers = apiFootballClient
 				.topScorers(Map.of(LEAGUE_PARAM, leagueId.toString(), SEASON_PARAM, seasonYear.toString())).response()
@@ -106,7 +99,7 @@ public class ApiFootballService implements FutechatService {
 								.map(ApiFootballPlayerStatistics::goals).mapToInt(ApiFootballPlayerGoals::total).sum()))
 				.collect(Collectors.toList());
 		return topScorers;
-		
+
 	}
 
 }
