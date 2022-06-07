@@ -25,6 +25,8 @@ phases:
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
     - IMAGE_TAG=${COMMIT_HASH:=latest}
     - echo $IMAGE_TAG
+    - DOCKER_TAG=$IMAGE_URI:$IMAGE_TAG
+    - echo $DOCKER_TAG
     - curl -O https://download.java.net/java/GA/jdk18/43f95e8614114aeaa8e8a5fcf20a682d/36/GPL/openjdk-18_linux-x64_bin.tar.gz
     - curl -O https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
     - tar xvf openjdk-18_linux-x64_bin.tar.gz
@@ -45,7 +47,7 @@ phases:
     - mvn -version
     - java -version
     - echo $JAVA_HOME
-    - docker build -t $IMAGE_URI:$IMAGE_TAG .
+    - docker build -t $DOCKER_TAG .
     - docker tag $APPLICATION_NAME:$IMAGE_TAG $IMAGE_URI:$IMAGE_TAG 
   post_build: 
     commands: 
