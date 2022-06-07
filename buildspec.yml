@@ -7,6 +7,9 @@ phases:
   pre_build: 
     commands: 
     - echo Logging in to Amazon ECR....
+    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - unzip awscliv2.zip
+    - sudo ./aws/install
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1
     - AWS_ACCOUNT_ID=270167558056
