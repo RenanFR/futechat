@@ -35,6 +35,7 @@ phases:
     - sudo mv apache-maven-3.8.5 /opt/
     - export M2_HOME=/opt/apache-maven-3.8.5
     - export PATH=${M2_HOME}/bin:${PATH}
+    - . ~/.profile
     # Replace with your application name
     # Replace with this 435320931996.dkr.ecr.ap-south-1.amazonaws.com to your repository URI
   build: 
