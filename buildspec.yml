@@ -1,28 +1,29 @@
 version: 0.2
 env:
-  secrets-manager:
-    DOCKERHUB_PASS: "/dockerhub/credentials/pass"
-    DOCKERHUB_USERNAME: "/dockerhub/credentials/user"
+#  secrets-manager:
+#    DOCKERHUB_PASS: "/dockerhub/credentials/pass"
+#    DOCKERHUB_USERNAME: "/dockerhub/credentials/user"
 phases: 
   pre_build: 
     commands: 
     - echo Logging in to Amazon ECR....
-    - sudo apt update
-    - sudo apt upgrade
-    - sudo apt install curl
-    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    - unzip awscliv2.zip
-    - sudo ./aws/install
+#    - sudo apt update
+#    - sudo apt upgrade
+#    - sudo apt install curl
+#    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#    - unzip awscliv2.zip
+#    - sudo ./aws/install
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1
     - AWS_ACCOUNT_ID=270167558056
     - APPLICATION_NAME=futechat
-    - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APPLICATION_NAME
+    - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/
+    - IMAGE_URI=$REPOSITORY_URI/$APPLICATION_NAME
     - echo $AWS_DEFAULT_REGION
     - echo $AWS_ACCOUNT_ID
     - echo $APPLICATION_NAME
     - echo $REPOSITORY_URI
-    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS     
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI     
     # Get commit hash value to tag the image
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
     - IMAGE_TAG=${COMMIT_HASH:=latest}
@@ -53,8 +54,8 @@ phases:
     - mvn -version
     - java -version
     - echo $JAVA_HOME
-#    - docker build -t $APPLICATION_NAME:$IMAGE_TAG .
-#    - docker tag $APPLICATION_NAME:$IMAGE_TAG $REPOSITORY_URI:$IMAGE_TAG 
+    - docker build -t $APPLICATION_NAME:$IMAGE_TAG .
+    - docker tag $APPLICATION_NAME:$IMAGE_TAG $IMAGE_URI:$IMAGE_TAG 
   post_build: 
     commands: 
     - echo Build completed on `date` 
