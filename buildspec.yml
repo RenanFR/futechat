@@ -42,7 +42,7 @@ phases:
     commands: 
     - echo Build started on `date` 
     - echo Building the Docker image... 
-#    - mvn clean package
+    - mvn clean package
     - mvn -version
     - java -version
     - echo $JAVA_HOME
