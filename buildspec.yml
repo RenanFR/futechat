@@ -26,14 +26,16 @@ phases:
     commands: 
     - echo Build started on `date` 
     - echo Building the Docker image... 
-    - mvn clean package
-    - docker build -t $APPLICATION_NAME:$IMAGE_TAG .
-    - docker tag $APPLICATION_NAME:$IMAGE_TAG $REPOSITORY_URI:$IMAGE_TAG 
+#    - mvn clean package
+    - mvn -version
+    - echo $JAVA_HOME
+#    - docker build -t $APPLICATION_NAME:$IMAGE_TAG .
+#    - docker tag $APPLICATION_NAME:$IMAGE_TAG $REPOSITORY_URI:$IMAGE_TAG 
   post_build: 
     commands: 
     - echo Build completed on `date` 
     - echo pushing to repo
-    - docker push $REPOSITORY_URI:$IMAGE_TAG
+#    - docker push $REPOSITORY_URI:$IMAGE_TAG
     - echo Writing image definitions file... 
     # Give your container name
     - printf '[{"name":"futechat", "imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
