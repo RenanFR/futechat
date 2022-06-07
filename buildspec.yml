@@ -1,5 +1,5 @@
 version: 0.2
-env:
+#env:
 #  secrets-manager:
 #    DOCKERHUB_PASS: "/dockerhub/credentials/pass"
 #    DOCKERHUB_USERNAME: "/dockerhub/credentials/user"
