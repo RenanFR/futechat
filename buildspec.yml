@@ -19,10 +19,12 @@ phases:
     - echo $AWS_ACCOUNT_ID
     - echo $APPLICATION_NAME
     - echo $REPOSITORY_URI
+    - echo $IMAGE_URI
     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI     
     # Get commit hash value to tag the image
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
     - IMAGE_TAG=${COMMIT_HASH:=latest}
+    - echo $IMAGE_TAG
     - curl -O https://download.java.net/java/GA/jdk18/43f95e8614114aeaa8e8a5fcf20a682d/36/GPL/openjdk-18_linux-x64_bin.tar.gz
     - curl -O https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
     - tar xvf openjdk-18_linux-x64_bin.tar.gz
@@ -49,7 +51,7 @@ phases:
     commands: 
     - echo Build completed on `date` 
     - echo pushing to repo
-#    - docker push $REPOSITORY_URI:$IMAGE_TAG
+    - docker push $IMAGE_URI:$IMAGE_TAG
     - echo Writing image definitions file... 
     # Give your container name
     - printf '[{"name":"futechat", "imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
