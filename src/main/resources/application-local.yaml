@@ -1,18 +1,3 @@
-cloud:
-  aws:
-    region:
-      static: sa-east-1
-      auto: false
-    stack:
-      auto: false
-logging:
-  level:
-    com:
-      amazonaws:
-        util:
-          EC2MetadataUtils: error
-        internal:
-          InstanceMetadataServiceResourceFetcher: error
 management:
   endpoints:
     web:

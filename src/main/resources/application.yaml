@@ -1,13 +1,23 @@
+cloud:
+  aws:
+    region:
+      static: sa-east-1
+      auto: false
+    stack:
+      auto: false
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+        internal:
+          InstanceMetadataServiceResourceFetcher: error
+          
 apiFootball:
   url: https://api-football-v1.p.rapidapi.com/v3
   host: api-football-v1.p.rapidapi.com
   
-logging:
-  group:
-    utils: br.com.futechat.discord.utils
-  level:
-    utils: TRACE
-    
 management:
   endpoints:
     web:
