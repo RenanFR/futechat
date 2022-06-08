@@ -13,6 +13,14 @@ logging:
           EC2MetadataUtils: error
         internal:
           InstanceMetadataServiceResourceFetcher: error
+    br:
+      com:
+        futechat:
+          discord:
+            bot:
+              config:
+                GlobalCommandRegistrar: trace
+          
           
 apiFootball:
   url: https://api-football-v1.p.rapidapi.com/v3
