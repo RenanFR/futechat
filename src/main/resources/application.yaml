@@ -7,3 +7,9 @@ logging:
     utils: br.com.futechat.discord.utils
   level:
     utils: TRACE
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

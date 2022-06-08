@@ -1,8 +1,4 @@
 version: 0.2
-#env:
-#  secrets-manager:
-#    DOCKERHUB_PASS: "/dockerhub/credentials/pass"
-#    DOCKERHUB_USERNAME: "/dockerhub/credentials/user"
 env:
   shell: bash
 phases: 
@@ -15,16 +11,9 @@ phases:
     - APPLICATION_NAME=futechat
     - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
     - IMAGE_URI=$REPOSITORY_URI/$APPLICATION_NAME
-    - echo $AWS_DEFAULT_REGION
-    - echo $AWS_ACCOUNT_ID
-    - echo $APPLICATION_NAME
-    - echo $REPOSITORY_URI
-    - echo $IMAGE_URI
     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI     
-    # Get commit hash value to tag the image
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
     - IMAGE_TAG=${COMMIT_HASH:=latest}
-    - echo $IMAGE_TAG
     - curl -O https://download.java.net/java/GA/jdk18/43f95e8614114aeaa8e8a5fcf20a682d/36/GPL/openjdk-18_linux-x64_bin.tar.gz
     - curl -O https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
     - tar xvf openjdk-18_linux-x64_bin.tar.gz
@@ -36,8 +25,6 @@ phases:
     - export M2_HOME=/opt/apache-maven-3.8.5
     - export PATH=${M2_HOME}/bin:${PATH}
     - . ~/.profile
-    # Replace with your application name
-    # Replace with this 435320931996.dkr.ecr.ap-south-1.amazonaws.com to your repository URI
   build: 
     commands: 
     - echo Build started on `date` 
@@ -46,7 +33,7 @@ phases:
     - mvn -version
     - java -version
     - echo $JAVA_HOME
-    - docker build -t $APPLICATION_NAME:$IMAGE_TAG .
+    - mvn spring-boot:build-image -Dspring-boot.build-image.imageName=$APPLICATION_NAME:$IMAGE_TAG
     - docker tag $APPLICATION_NAME:$IMAGE_TAG $IMAGE_URI:$IMAGE_TAG 
   post_build: 
     commands: 
@@ -54,7 +41,6 @@ phases:
     - echo pushing to repo
     - docker push $IMAGE_URI:$IMAGE_TAG
     - echo Writing image definitions file... 
-    # Give your container name
     - printf '[{"name":"futechat", "imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files:
