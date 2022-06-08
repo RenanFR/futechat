@@ -24,7 +24,7 @@ public class GlobalCommandRegistrar {
 	private final RestClient restClient;
 
 	// The name of the folder the commands json is in, inside our resources folder
-	private static final String commandsFolderName = "commands/";
+	private static final String commandsFolderName = "/commands/";
 
 	public GlobalCommandRegistrar(RestClient restClient) {
 		this.restClient = restClient;
@@ -64,7 +64,7 @@ public class GlobalCommandRegistrar {
 
 	private static List<String> getCommandsJson(List<String> fileNames) throws IOException {
 		// Confirm that the commands folder exists
-		URL url = GlobalCommandRegistrar.class.getClassLoader().getResource(commandsFolderName);
+		URL url = GlobalCommandRegistrar.class.getResource(commandsFolderName);
 		Objects.requireNonNull(url, commandsFolderName + " could not be found");
 
 		// Get all the files inside this folder and return the contents of the files as
@@ -84,8 +84,7 @@ public class GlobalCommandRegistrar {
 	 * @return The contents of the file as a String, otherwise throws an exception
 	 */
 	private static String getResourceFileAsString(String fileName) throws IOException {
-		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-		try (InputStream resourceAsStream = classLoader.getResourceAsStream(fileName)) {
+		try (InputStream resourceAsStream = GlobalCommandRegistrar.class.getResourceAsStream(fileName)) {
 			if (resourceAsStream == null)
 				return null;
 			try (InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream);
