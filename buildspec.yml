@@ -1,9 +1,13 @@
 version: 0.2
 env:
   shell: bash
+  secrets-manager:
+    ARTIST: test/artist
+    MUSIC_HEARING_NOW: test/secret:musicHearingNow
 phases: 
   pre_build: 
     commands: 
+    - echo $ARTIST - $MUSIC_HEARING_NOW
     - echo Logging in to Amazon ECR....
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1

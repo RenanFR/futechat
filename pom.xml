@@ -193,6 +193,7 @@
 						<configuration>
 							<sources>
 								<source>${project.build.directory}/generated-sources/annotations</source>
+								<source>/src/main/resources/commands</source>
 							</sources>
 						</configuration>
 					</execution>
