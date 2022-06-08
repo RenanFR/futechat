@@ -2,7 +2,7 @@ version: 0.2
 env:
   shell: bash
   secrets-manager:
-    ARTIST: test/artist
+    ARTIST: test/secret:artist
     MUSIC_HEARING_NOW: test/secret:musicHearingNow
 phases: 
   pre_build: 
