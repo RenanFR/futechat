@@ -41,7 +41,7 @@ phases:
     - echo pushing to repo
     - docker push $IMAGE_URI:$IMAGE_TAG
     - echo Writing image definitions file... 
-    - printf '[{"name":"futechat", "imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+    - printf '[{"name":"futechat", "imageUri":"%s"}]' $IMAGE_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
