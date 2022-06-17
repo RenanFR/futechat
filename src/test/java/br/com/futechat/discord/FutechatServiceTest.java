@@ -11,13 +11,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import br.com.futechat.discord.api.client.config.FeignConfig;
-import br.com.futechat.discord.mapper.FutechatMapperImpl;
-import br.com.futechat.discord.service.ApiFootballService;
-import br.com.futechat.discord.service.TestingFutechatService;
-import br.com.futechat.discord.service.text.ApiFootballTextService;
-import br.com.futechat.discord.service.text.FutechatTextService;
-import br.com.futechat.discord.service.text.TestingFutechatTextService;
+import br.com.futechat.commons.api.client.config.FeignConfig;
+import br.com.futechat.commons.mapper.FutechatMapperImpl;
+import br.com.futechat.commons.service.ApiFootballService;
+import br.com.futechat.commons.service.TestingFutechatService;
+import br.com.futechat.commons.service.text.ApiFootballTextService;
+import br.com.futechat.commons.service.text.FutechatTextService;
+import br.com.futechat.commons.service.text.TestingFutechatTextService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")

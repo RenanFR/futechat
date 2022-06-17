@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.futechat.discord.service.SourceApi;
-import br.com.futechat.discord.service.text.FutechatTextService;
+import br.com.futechat.commons.service.SourceApi;
+import br.com.futechat.commons.service.text.FutechatTextService;
 import discord4j.core.object.command.ApplicationCommandInteractionOption;
 
 @Service(CommandType.ARTILHEIRO_RAW_CMD)

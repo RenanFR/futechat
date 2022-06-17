@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import br.com.futechat.commons.EnableFutechatCommons;
 import br.com.futechat.discord.bot.commands.Command;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
@@ -18,6 +19,7 @@ import discord4j.core.event.domain.lifecycle.ReadyEvent;
 import reactor.core.publisher.Mono;
 
 @SpringBootApplication
+@EnableFutechatCommons
 public class FutechatApplication {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
