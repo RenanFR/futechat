@@ -1,13 +1,9 @@
 version: 0.2
 env:
   shell: bash
-  secrets-manager:
-    ARTIST: test/secret:artist
-    MUSIC_HEARING_NOW: test/secret:musicHearingNow
 phases: 
   pre_build: 
     commands: 
-    - echo $ARTIST - $MUSIC_HEARING_NOW
     - echo Logging in to Amazon ECR....
     - aws --version
     - AWS_DEFAULT_REGION=sa-east-1
@@ -28,15 +24,13 @@ phases:
     - sudo mv apache-maven-3.8.6 /opt/
     - export M2_HOME=/opt/apache-maven-3.8.6
     - export PATH=${M2_HOME}/bin:${PATH}
+    - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain agama --domain-owner 270167558056 --query authorizationToken --output text --region us-east-1`
     - . ~/.profile
   build: 
     commands: 
     - echo Build started on `date` 
-    - echo Building the Docker image... 
+    - cp ./settings.xml /root/.m2/settings.xml
     - mvn clean package
-    - mvn -version
-    - java -version
-    - echo $JAVA_HOME
     - mvn spring-boot:build-image -Dspring-boot.build-image.imageName=$APPLICATION_NAME:$IMAGE_TAG
     - docker tag $APPLICATION_NAME:$IMAGE_TAG $IMAGE_URI:$IMAGE_TAG 
   post_build: 
