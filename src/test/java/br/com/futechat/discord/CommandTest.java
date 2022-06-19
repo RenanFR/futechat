@@ -21,13 +21,16 @@ import br.com.futechat.commons.service.text.ApiFootballTextService;
 import br.com.futechat.discord.bot.commands.AlturaJogadorCommand;
 import br.com.futechat.discord.bot.commands.ArtilheiroCommand;
 import br.com.futechat.discord.bot.commands.Command;
+import br.com.futechat.discord.bot.commands.EstatisticasJogoCommand;
+import br.com.futechat.discord.bot.commands.PartidasCommand;
 import br.com.futechat.discord.bot.commands.TransferenciasJogadorCommand;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")
 @SpringBootTest(classes = { ApiFootballService.class, ApiFootballTextService.class, FeignConfig.class,
 		ApiFootballAspect.class, AspectJConfig.class, FutechatMapperImpl.class, AlturaJogadorCommand.class,
-		ArtilheiroCommand.class, TransferenciasJogadorCommand.class })
+		ArtilheiroCommand.class, TransferenciasJogadorCommand.class, PartidasCommand.class,
+		EstatisticasJogoCommand.class })
 public class CommandTest {
 
 	@Autowired
@@ -36,13 +39,17 @@ public class CommandTest {
 	@Test
 	public void sendCommandsShouldWork() {
 
-		assertEquals(3, commandHandlersMap.size());
+		assertEquals(5, commandHandlersMap.size());
 		Command commandAlturaJogador = commandHandlersMap.get("altura_jogador");
 		Command commandTransferenciasJogador = commandHandlersMap.get("transferencias_jogador");
 		Command commandArtilheiro = commandHandlersMap.get("artilheiro");
+		Command commandPartidas = commandHandlersMap.get("partidas");
+		Command commandEstatisticas = commandHandlersMap.get("estatisticas_jogo");
 		assertTrue(commandAlturaJogador instanceof AlturaJogadorCommand alturaJogadorCommand);
 		assertTrue(commandTransferenciasJogador instanceof TransferenciasJogadorCommand transferenciasJogadorCommand);
 		assertTrue(commandArtilheiro instanceof ArtilheiroCommand artilheiroCommand);
+		assertTrue(commandPartidas instanceof PartidasCommand partidasCommand);
+		assertTrue(commandEstatisticas instanceof EstatisticasJogoCommand estatisticasJogo);
 
 	}
 

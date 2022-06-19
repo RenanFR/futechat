@@ -1,0 +1,24 @@
+{
+	"name": "partidas",
+	"description": "Retorna a lista de jogos que ocorreram ou irão acontecer para a data e liga selecionada",
+	"options": [
+		{
+			"name": "liga",
+			"description": "Liga ou campeonato cujas partidas queremos buscar",
+			"type": 3,
+			"required": false
+		},
+		{
+			"name": "data",
+			"description": "Data no formato dd/MM/yyyy em que ocorrerão as partidas ou irão acontecer, omitir para trazer eventos ao vivo",
+			"type": 3,
+			"required": false
+		},
+        {
+            "name": "pais",
+            "description": "Existem muitas ligas com nomes semelhantes entre diferentes países, nos ajude a refinar",
+            "type": 3,
+            "required": false
+        }
+	]
+}

@@ -36,10 +36,9 @@ public class DiscordBotConfig {
 	@DependsOn({ "restClient" })
 	public GlobalCommandRegistrar globalCommandRegistrar(@Autowired RestClient restClient) throws IOException {
 		GlobalCommandRegistrar globalCommandRegistrar = new GlobalCommandRegistrar(restClient);
-		globalCommandRegistrar
-				.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json", "artilheiro.json"));
+		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json",
+				"artilheiro.json", "partidas.json", "estatisticas_jogo.json"));
 		return globalCommandRegistrar;
-
 	}
 
 }
