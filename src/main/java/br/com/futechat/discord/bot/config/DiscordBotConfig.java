@@ -37,7 +37,7 @@ public class DiscordBotConfig {
 	public GlobalCommandRegistrar globalCommandRegistrar(@Autowired RestClient restClient) throws IOException {
 		GlobalCommandRegistrar globalCommandRegistrar = new GlobalCommandRegistrar(restClient);
 		globalCommandRegistrar.registerCommands(List.of("altura_jogador.json", "transferencias_jogador.json",
-				"artilheiro.json", "partidas.json", "estatisticas_jogo.json"));
+				"artilheiro.json", "partidas.json", "estats_jogo.json"));
 		return globalCommandRegistrar;
 	}
 

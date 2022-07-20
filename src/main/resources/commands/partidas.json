@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "data",
-			"description": "Data no formato dd/MM/yyyy em que ocorrerão as partidas ou irão acontecer, omitir para trazer eventos ao vivo",
+			"description": "Data (dd/MM/yyyy) em que ocorrerão as partidas ou irão acontecer, omitir para trazer eventos ao vivo",
 			"type": 3,
 			"required": false
 		},

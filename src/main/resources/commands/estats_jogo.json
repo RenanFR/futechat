@@ -1,5 +1,5 @@
 {
-	"name": "estatisticas_jogo",
+	"name": "estats_jogo",
 	"description": "Trás as estatísticas de um jogo específico já finalizado",
 	"options": [
 		{
@@ -9,13 +9,13 @@
 			"required": true
 		},
         {
-            "name": "timeDaCasa",
+            "name": "time_da_casa",
             "description": "Nome do time da casa",
             "type": 3,
             "required": true
         },
         {
-            "name": "timeVisitante",
+            "name": "time_visitante",
             "description": "Nome do time visitante",
             "type": 3,
             "required": true
