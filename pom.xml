@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>br.com.futechat</groupId>
 			<artifactId>futechat-commons</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>

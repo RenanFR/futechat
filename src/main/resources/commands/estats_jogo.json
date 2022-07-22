@@ -1,6 +1,6 @@
 {
 	"name": "estats_jogo",
-	"description": "Trás as estatísticas de um jogo específico já finalizado",
+	"description": "Tras as estatisticas de um jogo especifico ja finalizado",
 	"options": [
 		{
 			"name": "data",

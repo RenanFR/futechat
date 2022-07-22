@@ -16,6 +16,12 @@ O Futechat é um bot integrado ao discord, ele provê dados do futebol em tempo 
 ```sh
 /artilheiro temporada:2021 liga:Ligue 1
 ```
+```sh
+/partidas liga:Serie A data:20/07/2022 pais:Brazil
+```
+```sh
+/estats_jogo data:20/07/2022 time_da_casa:Goias time_visitante:Fluminense
+```
 ## Arquitetura
 As etapas seguidas para a publicação desse serviço foram
 - Criação do cluster no ECS que será nosso ambiente de execução

@@ -27,10 +27,10 @@ public class EstatisticasJogoCommand implements Command {
 
 	@Override
 	public String execute(List<ApplicationCommandInteractionOption> cmdOptions) {
-		String homeTeam = cmdOptions.stream().filter(option -> option.getName().equals("timeDaCasa"))
+		String homeTeam = cmdOptions.stream().filter(option -> option.getName().equals("time_da_casa"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
-		String awayTeam = cmdOptions.stream().filter(option -> option.getName().equals("timeVisitante"))
+		String awayTeam = cmdOptions.stream().filter(option -> option.getName().equals("time_visitante"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
 		String matchDate = cmdOptions.stream().filter(option -> option.getName().equals("data"))

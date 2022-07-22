@@ -12,7 +12,7 @@ public enum CommandType {
 	public static final String TRANSFERENCIAS_JOGADOR_RAW_CMD = "transferencias_jogador";
 	public static final String ARTILHEIRO_RAW_CMD = "artilheiro";
 	public static final String PARTIDAS_RAW_CMD = "partidas";
-	public static final String ESTATISTICAS_JOGO_RAW_CMD = "estatisticas_jogo";
+	public static final String ESTATISTICAS_JOGO_RAW_CMD = "estats_jogo";
 
 	String rawCommand;
 

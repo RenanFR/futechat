@@ -2,7 +2,11 @@ package br.com.futechat.discord.bot.config;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+import br.com.futechat.discord.bot.commands.Command;
+import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

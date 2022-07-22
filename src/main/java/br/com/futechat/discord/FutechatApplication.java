@@ -22,34 +22,33 @@ import reactor.core.publisher.Mono;
 @EnableFutechatCommons
 public class FutechatApplication {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private GatewayDiscordClient gatewayDiscordClient;
+    @Autowired
+    private GatewayDiscordClient gatewayDiscordClient;
 
-	@Autowired
-	private Map<String, Command> commandHandlersMap;
+    @Autowired
+    private Map<String, Command> commandHandlersMap;
 
-	public static void main(String[] args) {
-		SpringApplication.run(FutechatApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FutechatApplication.class, args);
+    }
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void doStartupActions() {
+    @EventListener(ApplicationReadyEvent.class)
+    public void doStartupActions() {
 
-		gatewayDiscordClient.on(ReadyEvent.class, event -> Mono.fromRunnable(() -> {
-			LOGGER.info("O FUTECHAT ESTA CONECTADO COM O DISCORD");
-		})).subscribe();
+        gatewayDiscordClient.on(ReadyEvent.class, readyEvent -> Mono.fromRunnable(() -> {
+            LOGGER.info("O FUTECHAT ESTA CONECTADO COM O DISCORD");
+        })).subscribe();
 
-		gatewayDiscordClient.on(ChatInputInteractionEvent.class, event -> {
-			Command commandHandler = commandHandlersMap.get(event.getCommandName());
-			if (Optional.ofNullable(commandHandler).isPresent()) {
-				return event.deferReply().withEphemeral(true)
-						.then(event.createFollowup(commandHandler.execute(event.getOptions())));
-
-			}
-			return event.deferReply().withEphemeral(true).then(event.createFollowup("Comando não existe no Futechat"));
-		}).subscribe();
-	}
+        gatewayDiscordClient.on(ChatInputInteractionEvent.class, event -> {
+            Command commandHandler = commandHandlersMap.get(event.getCommandName());
+            if (Optional.ofNullable(commandHandler).isPresent()) {
+                return event.deferReply().withEphemeral(true)
+                        .then(event.createFollowup(commandHandler.execute(event.getOptions())));
+            }
+            return event.deferReply().withEphemeral(true).then(event.createFollowup("Comando não existe no Futechat"));
+        }).subscribe();
+    }
 
 }

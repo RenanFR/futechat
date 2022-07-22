@@ -44,7 +44,7 @@ public class CommandTest {
 		Command commandTransferenciasJogador = commandHandlersMap.get("transferencias_jogador");
 		Command commandArtilheiro = commandHandlersMap.get("artilheiro");
 		Command commandPartidas = commandHandlersMap.get("partidas");
-		Command commandEstatisticas = commandHandlersMap.get("estatisticas_jogo");
+		Command commandEstatisticas = commandHandlersMap.get("estats_jogo");
 		assertTrue(commandAlturaJogador instanceof AlturaJogadorCommand alturaJogadorCommand);
 		assertTrue(commandTransferenciasJogador instanceof TransferenciasJogadorCommand transferenciasJogadorCommand);
 		assertTrue(commandArtilheiro instanceof ArtilheiroCommand artilheiroCommand);
