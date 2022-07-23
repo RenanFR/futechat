@@ -1,0 +1,140 @@
+[
+   {
+      "id":"981634918843043890",
+      "application_id":"981591933434626098",
+      "version":"983050541817016400",
+      "default_permission":true,
+      "default_member_permissions":null,
+      "type":1,
+      "name":"altura_jogador",
+      "description":"Te diz a altura do jogador em quest\u00e3o",
+      "dm_permission":true,
+      "options":[
+         {
+            "type":3,
+            "name":"nome",
+            "description":"Nome do jogador",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"time",
+            "description":"Time onde joga",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"pais",
+            "description":"Pa\u00eds de origem do time (Caso haja mais de um time com esse mesmo nome no mundo)"
+         }
+      ]
+   },
+   {
+      "id":"982342673602080851",
+      "application_id":"981591933434626098",
+      "version":"983050541817016401",
+      "default_permission":true,
+      "default_member_permissions":null,
+      "type":1,
+      "name":"transferencias_jogador",
+      "description":"Lista todo o hist\u00f3rico de transfer\u00eancias de um jogador",
+      "dm_permission":true,
+      "options":[
+         {
+            "type":3,
+            "name":"nome",
+            "description":"Nome do jogador",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"time",
+            "description":"Time onde joga (Caso tenha s\u00f3 o primeiro nome do jogador ou ele tenha um nome muito comum)"
+         }
+      ]
+   },
+   {
+      "id":"983402079185928263",
+      "application_id":"981591933434626098",
+      "version":"983402079185928264",
+      "default_permission":true,
+      "default_member_permissions":null,
+      "type":1,
+      "name":"artilheiro",
+      "description":"Te informa o artilheiro para a temporada e liga informadas e a quantidade de gols feitos",
+      "dm_permission":true,
+      "options":[
+         {
+            "type":4,
+            "name":"temporada",
+            "description":"Ano da temporada em quest\u00e3o",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"liga",
+            "description":"Liga cujo artilheiro queremos buscar",
+            "required":true
+         }
+      ]
+   },
+   {
+      "id":"999267794434658304",
+      "application_id":"981591933434626098",
+      "version":"999267794434658305",
+      "default_permission":true,
+      "default_member_permissions":null,
+      "type":1,
+      "name":"partidas",
+      "description":"Retorna a lista de jogos que ocorreram ou ir\u00e3o acontecer para a data e liga selecionada",
+      "dm_permission":true,
+      "options":[
+         {
+            "type":3,
+            "name":"liga",
+            "description":"Liga ou campeonato cujas partidas queremos buscar"
+         },
+         {
+            "type":3,
+            "name":"data",
+            "description":"Data (dd/MM/yyyy) em que ocorrer\u00e3o as partidas ou ir\u00e3o acontecer, omitir para trazer eventos ao vivo"
+         },
+         {
+            "type":3,
+            "name":"pais",
+            "description":"Existem muitas ligas com nomes semelhantes entre diferentes pa\u00edses, nos ajude a refinar"
+         }
+      ]
+   },
+   {
+      "id":"999269526594142230",
+      "application_id":"981591933434626098",
+      "version":"999870314395729999",
+      "default_permission":true,
+      "default_member_permissions":null,
+      "type":1,
+      "name":"estats_jogo",
+      "description":"Tras as estatisticas de um jogo especifico ja finalizado",
+      "dm_permission":true,
+      "options":[
+         {
+            "type":3,
+            "name":"data",
+            "description":"Data em que a partida ocorreu no formato dd/MM/yyyy",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"time_da_casa",
+            "description":"Nome do time da casa",
+            "required":true
+         },
+         {
+            "type":3,
+            "name":"time_visitante",
+            "description":"Nome do time visitante",
+            "required":true
+         }
+      ]
+   }
+]
