@@ -3,22 +3,10 @@
 	"description": "Tras as estatisticas de um jogo especifico ja finalizado",
 	"options": [
 		{
-			"name": "data",
-			"description": "Data em que a partida ocorreu no formato dd/MM/yyyy",
-			"type": 3,
+			"name": "id_partida",
+			"description": "O id sistêmico da partida",
+			"type": 4,
 			"required": true
-		},
-        {
-            "name": "time_da_casa",
-            "description": "Nome do time da casa",
-            "type": 3,
-            "required": true
-        },
-        {
-            "name": "time_visitante",
-            "description": "Nome do time visitante",
-            "type": 3,
-            "required": true
-        }
+		}
 	]
 }

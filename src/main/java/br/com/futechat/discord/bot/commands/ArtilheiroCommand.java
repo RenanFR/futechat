@@ -2,6 +2,7 @@ package br.com.futechat.discord.bot.commands;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,8 +32,10 @@ public class ArtilheiroCommand implements Command {
 		String leagueName = cmdOptions.stream().filter(option -> option.getName().equals("liga"))
 				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
 				.get();
-
-		String leagueStrikerForTheSeason = futechatTextService.getLeagueTopScorersForTheSeason(seasonYear.intValue(), leagueName);
+		String countryName = cmdOptions.stream().filter(option -> option.getName().equals("pais"))
+				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
+				.get();
+		String leagueStrikerForTheSeason = futechatTextService.getLeagueTopScorersForTheSeason(seasonYear.intValue(), leagueName, countryName);
 
 		LOGGER.info("LISTA DE ARTILHEIROS DA LIGA {} NA TEMPORADA {}: {}", leagueName, seasonYear,
 				leagueStrikerForTheSeason);

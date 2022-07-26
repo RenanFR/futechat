@@ -1,7 +1,5 @@
 package br.com.futechat.discord.bot.commands;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -27,17 +25,11 @@ public class EstatisticasJogoCommand implements Command {
 
 	@Override
 	public String execute(List<ApplicationCommandInteractionOption> cmdOptions) {
-		String homeTeam = cmdOptions.stream().filter(option -> option.getName().equals("time_da_casa"))
-				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
-				.get();
-		String awayTeam = cmdOptions.stream().filter(option -> option.getName().equals("time_visitante"))
-				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
-				.get();
-		String matchDate = cmdOptions.stream().filter(option -> option.getName().equals("data"))
-				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asString()).findAny()
-				.get();
-		LOGGER.info("BUSCANDO ESTATISTICAS DE {} X {} PARA O JOGO DA DATA {}", homeTeam, awayTeam, matchDate);
-		String stats = futechatTextService.getFixtureStatistics(homeTeam, awayTeam, LocalDate.parse(matchDate, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		Integer fixtureId = cmdOptions.stream().filter(option -> option.getName().equals("id_partida"))
+				.map(ApplicationCommandInteractionOption::getValue).map(value -> value.get().asLong()).findAny().get()
+				.intValue();
+		LOGGER.info("BUSCANDO ESTATISTICAS PARA O JOGO {}", fixtureId);
+		String stats = futechatTextService.getFixtureStatistics(fixtureId);
 		return stats;
 	}
 
