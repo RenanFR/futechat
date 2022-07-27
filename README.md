@@ -6,6 +6,9 @@ Antigamente sediada primariamente nos bares, festas e outros locais físicos, a 
 Você já esteve em uma dessas conversas e surgiu uma dúvida sobre um fato do futebol? Como por exemplo quem foi o último artilheiro da Premier League? Ou qual a altura daquele zagueiro do PSG? Ou talvez quem foi o jogador envolvido na transferência mais cara do último ano?
 Dados enriquecem a conversa e as vezes é chato ter que sair do discord para pesquisar no google e dependendo de quão específica é a pergunta pode ser difícil encontrar
 O Futechat é um bot integrado ao discord, ele provê dados do futebol em tempo real por meio da execução de simples comandos, você tem a informação a sua disposição para fortalecer seu argumento na resenha e nem precisa sair da janela da conversa
+
+## Comece a usar
+Adicione gratuitamente ao seu servidor do discord clicando [aqui](https://discord.com/api/oauth2/authorize?client_id=981591933434626098&permissions=274877913088&scope=applications.commands%20bot)
 ## Exemplos
 ```sh
 /transferencias_jogador nome:Neymar time:Paris Saint Germain
